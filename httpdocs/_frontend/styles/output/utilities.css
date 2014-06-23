@@ -1,0 +1,174 @@
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+/*Utility classes*/
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.float_right {
+  float: right;
+}
+
+.float_left {
+  float: left;
+}
+
+.pad_50 {
+  padding-right: 50%;
+}
+
+.pad_25 {
+  padding-right: 25%;
+}
+
+.pos_rel {
+  position: relative;
+}
+
+.no_top_marg {
+  margin-top: 0;
+}
+
+.horz_align {
+  text-align: center;
+}
+
+.clear_both {
+  clear: both;
+}
+
+/*Basic styles*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Buttons*/
+.btn {
+  border: 0;
+  color: #FFFFFF;
+  background-color: #004990;
+  border-bottom: 3px solid #002f5d;
+  padding: 12px 30px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  display: inline-block;
+  text-decoration: none;
+  min-width: 150px;
+  max-width: 320px;
+  text-align: center;
+  font-weight: 600;
+}
+.btn:hover, .btn:focus {
+  background-color: #002f5d;
+  border-bottom-color: #00152a;
+}
+.btn:active {
+  padding: 11px 30px;
+  border-top: 2px solid transparent;
+}
+
+.block_btn {
+  display: block;
+  min-width: 0;
+}
+
+.btn_secondary {
+  background-color: #00aedb;
+  border-bottom-color: #004990;
+}
+.btn_secondary:hover, .btn_secondary:focus {
+  background-color: #0085a8;
+  border-bottom-color: #002f5d;
+}
+
+.btn_white {
+  color: #004990;
+  background-color: #FFF;
+  border-bottom-color: #00aedb;
+}
+.btn_white:hover, .btn_white:focus {
+  background-color: #F1F1F1;
+  border-bottom-color: #004990;
+}
+
+.btn_dark {
+  background-color: #464f58;
+  border-bottom-color: #00aedb;
+}
+.btn_dark:hover, .btn_dark:focus {
+  background-color: #2f353c;
+  border-bottom-color: #0085a8;
+}
+
+.btn_alt_blue {
+  background-color: #a7bbd1;
+  border-bottom-color: #002f5d;
+  color: #004990;
+}
+.btn_alt_blue:hover, .btn_alt_blue:focus {
+  background-color: #ecf1f6;
+  border-bottom-color: #004990;
+}
+
+/* Link types */
+.mail_link, .twitter_link, .phone_link {
+  color: #464f58;
+  font-weight: 600;
+  margin: 1em 0;
+}
+.mail_link:before, .twitter_link:before, .phone_link:before {
+  content: '';
+  display: block;
+  float: left;
+  width: 25px;
+  height: 20px;
+  margin-right: 3px;
+  background: url("/images/background/_sprite.png") no-repeat -267px -71px;
+}
+.mail_link:hover, .twitter_link:hover, .phone_link:hover, .mail_link:focus, .twitter_link:focus, .phone_link:focus {
+  color: #00aedb;
+}
+
+.twitter_link:before {
+  background-position: -267px -99px;
+}
+
+.phone_link:before {
+  background-position: -241px -70px;
+}
+
+.warning {
+  font-weight: 600;
+}
+
+.play_icon {
+  position: relative;
+  display: block;
+}
+.play_icon:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  background: url("/images/background/_sprite.png") no-repeat -220px -417px;
+}

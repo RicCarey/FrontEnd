@@ -1,0 +1,234 @@
+@import "mixins.scss";
+
+/*Utility classes*/
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.float_right
+{
+	float: right;
+}
+
+.float_left
+{
+	float: left;
+}
+
+.pad_50
+{
+	padding-right: 50%;
+}
+
+.pad_25
+{
+	padding-right: 25%;
+}
+
+.pos_rel
+{
+	position: relative;
+}
+
+.no_top_marg
+{
+	margin-top: 0;
+}
+
+.horz_align
+{
+	text-align: center;
+}
+
+.clear_both
+{
+    clear: both;
+}
+
+/*Basic styles*/
+nav
+{
+	ul
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+/*Buttons*/
+.btn 
+{
+	border: 0;
+	color: #FFFFFF;
+	background-color: $colour-prime;
+	border-bottom: 3px solid $colour-prime-darker;
+	padding: 12px 30px;
+	@include border-radius();
+	display: inline-block;
+	text-decoration: none;
+	min-width: 150px;
+	max-width: $spalm-max-width;
+	text-align: center;
+	font-weight: 600;
+
+	&:hover,
+	&:focus
+	{
+		background-color: darken($colour-prime, 10%);
+		border-bottom-color: darken($colour-prime-darker, 10% );
+	}
+
+	&:active 
+	{
+		padding: 11px 30px;
+		border-top: 2px solid transparent;
+	}
+}
+
+.block_btn
+{
+	display: block;
+	min-width: 0;
+}
+
+.btn_secondary
+{
+	background-color: $colour-secondary;
+	border-bottom-color: $colour-prime;
+
+	&:hover,
+	&:focus
+	{
+		background-color: $colour-secondary-darker;
+		border-bottom-color: $colour-prime-darker;
+	}
+}
+
+.btn_white
+{
+	color: $colour-prime;
+	background-color: #FFF;
+	border-bottom-color: $colour-secondary;
+
+	&:hover,
+	&:focus
+	{
+		background-color: #F1F1F1;
+		border-bottom-color: $colour-prime;
+	}
+}
+
+.btn_dark
+{
+	background-color: $colour-grey;
+	border-bottom-color: $colour-secondary;
+
+	&:hover,
+	&:focus
+	{
+		background-color: $colour-grey-dark;
+		border-bottom-color: $colour-secondary-darker;
+	}
+}
+
+.btn_alt_blue
+{
+	background-color: $color-greyblue-dark;
+	border-bottom-color: $colour-prime-darker;
+	color: $colour-prime;
+
+	&:hover,
+	&:focus
+	{
+		background-color: $colour-vpale-blue;
+		border-bottom-color:  $colour-prime;
+	}
+}
+
+/* Link types */
+%linktypes
+{
+	color: $colour-body;
+	font-weight: 600;
+	margin: 1em 0;
+
+	&:before
+	{
+		content: '';
+		display: block;
+		float: left;
+		width: 25px;
+		height: 20px;
+		margin-right: 3px;
+		background: url('/images/background/_sprite.png') no-repeat -267px -71px;
+	}
+
+	&:hover,
+	&:focus
+	{
+		color: $colour-secondary;
+	}
+}
+
+.mail_link
+{
+	@extend %linktypes;
+}
+
+.twitter_link
+{
+	@extend %linktypes;
+
+	&:before
+	{
+		background-position: -267px -99px;
+	}
+}
+
+.phone_link
+{
+	@extend %linktypes;
+
+	&:before
+	{
+		background-position: -241px -70px;
+	}
+}
+
+.warning
+{
+	font-weight: 600;
+}
+
+.play_icon
+{
+	position: relative;
+	display: block;
+
+	&:before
+	{
+		content: '';
+		display: block;
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -30px;
+		margin-top: -30px;
+		background: url('/images/background/_sprite.png') no-repeat -220px -417px;
+	}
+}

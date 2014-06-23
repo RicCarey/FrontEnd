@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta name="viewport" content="width=device-width, target-densitydpi=medium-dpi">
+    
+        <title>@Page.Title | Site Name</title>
+        <meta name="description" content="">
+      
+
+        <!-- Stylesheets - Ensure they are bundled in dev -->
+ 
+        <link rel="stylesheet" href="styles/output/normalize.css" />
+        <link rel="stylesheet" href="styles/output/grid.css" />
+        <link rel="stylesheet" href="styles/output/utilities.css" />
+        <link rel="stylesheet" href="styles/output/global.css" />
+        <link rel="stylesheet" href="styles/output/mediaQ.css" />
+
+        
+
+        @*Download your favicons from here - http://realfavicongenerator.net/ *@
+
+
+        <!-- Scripts to load quick -->
+
+        <!--[if lt IE 9]>
+        <script src="scripts/polyfills/selectivizr-min.js"></script>
+        <![endif]-->
+
+      
+        <!-- Note: Before go live ensure to use a custom modernizr build! -->
+        <script src="scripts/libs/modernizr-2.7.1.js"></script>
+
+     
+
+        @RenderSection("head", required: false)
+    </head>
+
+    <body@(Html.Raw(Page.bodyClass))>
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+       
+        <div class="overall_wrapper">
+            <div id="page_wrapper">
+                <div id="expander">
+                    @RenderPage("Partials/_Header.cshtml")
+
+                    <div class="main_content">
+                        @RenderBody()
+                    </div>
+                </div>
+
+                @RenderPage("Partials/_Footer.cshtml")
+            </div>
+        </div>
+
+            <!-- All other scripts -->
+
+
+            <script src="scripts/libs/jquery-1.11.1.min.js"></script>
+            <script src="scripts/3rd-party-plugins.js"></script>
+            <script src="scripts/libs/select2.js"></script>
+            <script src="scripts/global.js"></script>
+
+
+            @RenderSection("scripts", required: false)
+        </body>
+
+</html>

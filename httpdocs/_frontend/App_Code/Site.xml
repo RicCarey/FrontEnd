@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Define the pages and folders for export -->
+<site>
+  <page Name="Home">Home.cshtml</page>
+  <page Name="PlayGround">Playground.cshtml</page>
+  <page Name="Contour">Contour.cshtml</page>
+  <page Name="Standard Internal">StandardInternal.cshtml</page>
+  <page Name="Listing">Listing.cshtml</page>
+  <page Name="Calender">Calender.cshtml</page>
+  <page Name="Contact Us">ContactUs.cshtml</page>
+  
+  <folder>scripts</folder>
+  <folder>styles</folder>
+  <folder>images</folder>
+  
+  <!--Example file export
+    <file>favicon.ico</file>
+  -->
+</site>

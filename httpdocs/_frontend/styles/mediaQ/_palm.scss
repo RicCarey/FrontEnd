@@ -1,0 +1,1159 @@
+@import "../mixins.scss";
+
+/***** Palm (Smaller than  768px) *****/
+@media only screen and (max-width: 767px) 
+{
+	.pad_50,
+	.pad_25
+	{
+		padding: 0;
+	}
+
+    .wrapper
+    {
+        min-width: 500px;
+    }
+
+	.palm_only_inblock
+	{
+		display: inline-block !important;
+	}
+
+	.palm_only_block
+	{
+		display: block !important;
+	}
+
+	h1
+	{
+		@include em-font-size(30, $bodyfontSize);
+	}
+
+	.rich_text_area h1
+	{
+		margin-top: 0;
+	}
+
+
+
+	.block_map
+	{
+		display: none;
+	}
+
+	/* ==========================================================================
+	   Header
+	   ========================================================================== */
+	.logo
+	{
+		width: 60px;
+		height: 60px;
+		background: url('/images/background/_sprite.png') no-repeat -295px -0px;
+
+		img
+		{
+			display: none;
+		}
+	}
+
+	.quick_links
+	{
+		@include em-font-size(10, $bodyfontSize);
+
+		a
+		{
+			padding: 1em;
+		}
+	}
+
+	.site_search 
+	{
+		.search_input
+		{
+			background-color: $colour-prime;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100%;
+			padding: 10px 1em;
+			z-index: 15;
+			margin: 0;
+		}
+
+		input[type="search"]
+		{
+			@include border-box;
+			margin: 0;
+			width: 100%;
+		}
+	}
+
+	/* ==========================================================================
+	   Primary Nav
+	*/
+	.primary
+	{
+		> ul
+		{
+			> li
+			{
+				width: auto;
+				float: none;
+			
+				&:nth-child(odd)
+				{
+					border-right: 0;
+				}
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Sub Nav
+	*/
+	.sub_nav,
+	.ddl_links,
+	.filter_form
+	{
+		position: static;
+		width: 100%;
+	}
+
+    #subnav_secondary
+    {
+        margin-top: 20px;
+    }
+
+	/* Filter form */
+	.filter_form li
+	{
+		float: none;
+		padding: 0;
+		width: auto;
+	}
+
+	/* Back btn */
+	.back_btn
+	{
+		position: static;
+		margin-bottom: 1em;
+		text-align: right;
+		@include em-font-size(12, $bodyfontSize);
+	}
+
+	/* ==========================================================================
+	   Banner Rotator
+	*/
+	.banner_rotator
+	{
+		min-height: 100px;
+
+		p
+		{
+			@include em-font-size(24, $bodyfontSize);
+            max-width: 600px;
+            margin: 0 auto 10px auto;
+		}
+
+		.msg
+		{
+			top: 0%;
+			width: 100%;
+            padding: 1em;
+            @include border-box;
+		}
+
+		.align-centre,
+        .align-left,
+        .align-right
+		{
+			.msg
+			{
+				margin-left: -50%;
+				left: 50%;
+                right: auto;
+                text-align: center;
+			}
+		}
+	}
+
+	.content_rotator
+	{
+		.msg
+		{
+			top: 0%;
+			width: 100%;
+            padding: 1em;
+            @include border-box;
+		}
+
+		.align-centre,
+        .align-left,
+        .align-right
+		{
+			.msg
+			{
+				margin-left: -50%;
+				left: 50%;
+                right: auto;
+                text-align: center;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Footer
+	   ========================================================================== */
+	footer
+    {
+        margin-bottom: 0;
+    }
+    
+    .sticky_footer
+	{
+		position: static;
+        @include em-font-size(16, $bodyfontSize);
+        @include clearfix;
+
+		> ul
+		{
+			display: block !important; /* Force to show even if toggle hidden on larger screen */
+		}
+
+        li
+        {
+            width: 50%;
+            border: 0;
+            padding: 0;
+        }
+
+        .lrg_item
+        {
+            float: none;
+            display: inline-block;
+            width: 100%;
+            border-bottom: 1px solid $colour-pale-blue;
+            padding: 20px 30px;
+        }
+
+		.text_size span,
+		.contrast span
+		{
+			width: auto;
+            margin-right: 20px;
+            padding-top: 10px;
+		}
+
+        .live_chat
+        {
+            float: left;
+            display: block;
+
+            a
+            {
+                padding: 20px 30px 20px 50px;
+
+                &:before
+                {
+                    left: 10px;
+                }
+
+                &:after
+                {
+                    right: 10px;
+                }
+            }
+        }
+
+        .browsealoud
+        {
+            display: block;
+            float: left;
+
+            a
+            {
+                border-left: 1px solid $colour-pale-blue;
+                padding: 20px;
+            }
+        }
+	}
+
+	.accessibility_toggle
+	{	
+		display: none;
+	}
+
+    .footer_links 
+    {
+        li
+        {
+            display: block;
+            margin: 0 0 1em 0;
+        }
+    }
+
+    .accreditations
+    {
+        float: none;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .quick_site_links
+    {
+        margin: 0 0 30px 0;
+        float: none;
+        text-align: center;
+
+        li
+        {
+            display: block;
+            float: none;
+            border: 0;
+            margin-bottom: 1em;
+        }
+    }
+
+    .reg_copy
+    {
+        padding: 2em;
+
+        li
+        {
+            display: block;
+            border: 0;
+            margin-bottom: 1em;
+        }
+    }
+
+	/* ==========================================================================
+	   Page Elements 
+	   ========================================================================== */
+
+	/* Breadcrumb */
+	.breadcrumb
+	{
+		display: none;
+	}
+
+	/* ==========================================================================
+	   Related Links
+	*/
+	.related_links
+	{
+		li
+		{
+			float: none;
+			width: auto;
+		}
+	}
+
+	/* ==========================================================================
+	   Tool box
+	*/
+	.tool_box
+	{
+		li
+		{
+			float: none;
+			width: 32%;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		&.open  
+		{
+			ul
+			{
+				height: auto;
+				max-height: 600px;
+			}
+		}
+
+		.link-text
+		{
+			&:after
+			{
+				display: none;
+			}
+
+		}
+	}
+
+	.home
+	{
+		.tool_box
+		{
+			a{
+				padding: 20px 1em;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Icon Link List
+	*/
+	.icon_link_list
+	{
+		li
+		{
+			float: none;
+			width: 30%;
+		}
+	}
+
+	/* FAQ accordion */
+	.faq
+	{
+		.question_text
+		{
+			width: 80%;
+		}
+
+		dt
+		{
+			a
+			{
+				padding: 10px 20px;
+
+				&:after
+				{
+					display: none;
+				}
+			}
+		}
+
+		dd
+		{
+			padding: 10px 20px;
+		}
+	}
+
+	/* ==========================================================================
+	   Area Map
+	*/
+	.area_map_container
+	{
+		display: none;
+	}
+
+	/* Home Area map */
+	.home
+	{
+		.area_map_container
+		{
+			display: block;
+			background-color: $colour-bg;
+		}
+
+		.area_map
+		{
+			display: none;
+		}
+	}
+
+	/* Map locations */
+	.locations
+	{
+		li
+		{
+			width: auto;
+			display: block;
+			padding: 1em 0;
+		}
+	}
+
+	/* ==========================================================================
+	   Tabbed content
+	*/
+	.content_tabs
+	{
+		border-bottom: 1px solid $colour-lpale-blue;
+
+		.tabs
+		{
+			> li
+			{
+				float: none;
+				margin: 0;
+			}
+		}
+
+		.tab_link
+		{
+			padding: 1em 2em;
+			position: relative;
+
+			&:before
+			{
+				content: '';
+				background: url('/images/background/_sprite.png') no-repeat -99px -38px;
+				position: absolute;
+				right: 1em;
+				top: 50%;
+				height: 10px;
+				width: 10px;
+				margin-top: -4px;
+			}
+
+			&.active
+			{
+				&:before
+				{
+					background-position: -62px -38px;
+				}
+			}
+		}
+
+		.tab_content
+		{
+			padding: 1em;
+		}
+	}
+
+	/* ==========================================================================
+	   Section intro
+	*/
+	.section_intro
+	{
+		text-align: center;
+
+		h1, p, img
+		{
+			margin: 0;
+		}
+
+		p
+		{
+			@include em-font-size($bodyfontSize, $bodyfontSize);
+		}
+	}
+
+	/* ==========================================================================
+	   Chatter
+	*/
+	.chatter
+	{
+		text-align: center;
+		margin: 0;
+
+		.social_links
+		{
+			position: static;
+			float: none;
+			margin: 0 0 30px 0;
+
+			.label
+			{
+				@include em-font-size(18, $bodyfontSize);
+				display: block;
+				margin: 0;
+			}
+
+			li
+			{
+				float: none;
+				display: inline-block
+			}
+		}
+		
+		img
+		{
+			float: none;
+			margin: 15px 0;
+		}
+	}
+
+	.chatter_list
+	{
+		li
+		{
+			text-align: center;
+		}
+	}
+
+	/* ==========================================================================
+	   Image bg modules
+	*/
+	.imgbg_module
+	{
+		background-size: cover;
+	}
+
+	/* ==========================================================================
+	   Scheme Locator
+	*/
+	.scheme_form
+	{
+		li
+		{
+			float: none;
+			width: auto;
+			padding-right: 0;
+		}
+
+		.submit_itm 
+		{
+			padding: 20px 0;
+		}
+	}
+
+	.scheme_locator_results
+	{
+		.section_border_top 
+		{
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	/* ==========================================================================
+	   Search form
+	*/
+	.search_form
+	{
+		li
+		{
+			float: none;
+			width: auto;
+			padding-right: 0;
+		}
+	}
+
+	/* ==========================================================================
+	   Scheme Details
+	*/
+	.scheme_header
+	{
+		margin-top: 0;
+		border-top: 0;
+		padding-top: 0;
+
+		h3,
+		p
+		{
+			float: none;
+			width: auto;
+		}
+
+		h3
+		{
+			margin-bottom: 0.5em;
+		}
+
+		p
+		{
+			text-align: left;
+		}
+	}
+
+	/* ==========================================================================
+	   Listing
+	*/
+	.listing
+	{
+		margin: 0;
+
+		img
+		{
+			margin: 0 auto;
+			float: none;
+			max-width: $palm-inner-width;
+		}
+
+		.img_link
+		{
+			text-align: center;
+		}
+
+		h3, p
+		{
+			margin: 0;
+		}
+
+		.btn
+		{
+			margin: 0;
+			display: inline-block;
+			padding: 12px 30px;
+		}
+	}
+
+	/* ==========================================================================
+	   Events
+	*/
+
+	.events_list 
+	{
+		.events_day
+		{
+			float: none;
+			margin-left: 10px;
+			clear: left;
+			padding-top: 10px;
+		}
+	}
+
+	/* ==========================================================================
+	   Areas
+	*/
+	.area_logo_list
+	{
+		position: static;
+		width: 250px;
+		margin: 0 auto;
+
+		li
+		{
+			margin: 40px 0;
+			position: relative;
+			display: block;
+			float: none;
+		}
+
+		.area_logo
+		{
+			.title
+			{
+				display: block;
+				position: absolute;
+				left: 120px;
+				top: 30px;
+				color: $colour-body;
+
+				&:hover
+				{
+					color: $colour-prime;
+				}
+			}
+		}
+	}
+
+	.home
+	{
+		.area_logo_list
+		{
+			width: 300px;
+
+			li
+			{
+				margin: 1em 0;
+			}
+		}
+
+
+		.area_logo
+		{
+			display: inline-block;
+
+			.title
+			{
+				top: 65px;
+				left: 144px;
+			}
+		}
+	}
+
+	.area_logo
+	{
+		text-align: center;
+		float: none;
+		margin: 10px auto 0 auto;
+	}
+
+	/* Icon Details List */
+	.icon_details_list
+	{
+		p
+		{
+			display: none;
+		}
+	}
+
+	/* ==========================================================================
+	   Content grid
+	*/
+	.content_grid
+	{
+		li
+		{
+			margin: 0 10px;
+			padding: 1em 0;
+		}
+	}
+
+	/* ==========================================================================
+	   Module boxes
+	*/
+	.module_box
+	{
+		h2
+		{
+			@include em-font-size(30, $bodyfontSize);
+			min-height: 2.5em;
+		}
+
+		.more_link
+		{
+			margin-bottom: 0;
+		}
+	}
+
+	/* ==========================================================================
+		Social share
+	*/
+	.social_share
+	{
+		margin: 0;
+	}
+
+	/* ==========================================================================
+	   Row accordions (Staff/Documents) */
+	.accordion_row
+	{
+		.btn
+		{
+			float: left;
+			margin-left: 40px;
+			margin-top: 0;
+		}
+
+		.year
+		{
+			display: inline;
+		}
+
+		.label
+		{
+			margin-top: 0;
+			width: 50%;
+		}
+	}
+
+	/* ==========================================================================
+	   Documents list */
+	.documents_list
+	{
+		.document_link
+		{
+			float: none;
+			width: auto;
+			margin-bottom: 10px;
+		}
+	}
+
+	/* Years list */
+	.years_list
+	{
+		@include em-font-size(30, $bodyfontSize);
+	}
+
+	/* ==========================================================================
+	   Staff grid */
+	.staff_grid
+	{
+		padding: 0;
+
+		> li
+		{
+			width: 45%;
+			border-bottom: 0;
+			height: auto !important;
+
+			&:last-child
+			{
+				padding-bottom: 0;
+			}
+
+			> div
+			{
+				height: auto !important;
+			}
+		}
+
+		.img_link
+		{
+			text-align: center;
+		}
+	}
+
+
+	/* ==========================================================================
+	   Staff profile */
+	.staff_profile
+	{
+		.img_float_left 
+		{
+			float: none;
+			margin: 0 auto 1em auto;
+		}
+	}
+
+	/* Alert */
+	.alert
+	{
+		.title
+		{
+			float: none;
+			@include em-font-size(30, $bodyfontSize);
+			margin-bottom: 10px;
+			display: block;
+		}
+
+		p
+		{
+			@include em-font-size(14, $bodyfontSize);
+		}
+
+		.alert_content
+		{
+			padding: 0.5em;
+			float: none;
+			width: auto;
+            margin: 0;
+		}
+
+		.hide
+		{
+			background-color: transparent;
+			float: right;
+			padding: 0.5em;
+			width: auto;			
+			display: block;
+			text-align: left;
+            position: static;
+
+			&:hover
+			{
+				background-color: transparent;
+			}
+		}
+
+		.icon-search
+		{
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	/* ==========================================================================
+	   Galleries
+	*/
+	.gallery_list
+	{
+		li
+		{
+			width: 32%;
+		}
+	}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 620px)
+{
+	/* ==========================================================================
+	   Banner Rotator
+	*/
+	.banner_rotator
+	{
+		.msg
+        {
+            padding: 5px;
+        }
+
+		p
+		{
+			margin-bottom: 5px;
+		}
+
+		.flex-control-paging
+		{
+			right: 5px;
+			width: auto;
+		}
+    }
+}
+
+@media only screen and (max-width: 567px)
+{
+    .wrapper
+    {
+        min-width: 0;
+		max-width: none;
+    }
+
+	/* ==========================================================================
+	   Header
+	*/
+	.user_actions
+	{
+		float: none;
+		text-align: center;
+		padding: 0;
+	}
+
+	.quick_links
+	{
+		ul
+		{
+			float: none;
+			text-align: center;
+		}
+	}
+
+
+	/* ==========================================================================
+	   Image bg modules
+	*/
+	.imgbg_module
+	{
+		float: none;
+		width: auto;
+		max-width: $palm-max-width;
+		margin: 0 auto 10px auto;
+
+		&:nth-child(3n)
+		{
+			margin: 0 auto 10px auto;
+		}
+	}
+
+	/* ==========================================================================
+	   Content Rotator
+	*/
+	.content_rotator
+	{
+		max-width: 400px;
+		margin-bottom: 20px;
+	}
+
+	/* ==========================================================================
+	   Latest Articles
+	*/
+	.home
+	{
+		.latest_articles
+		{
+			> div
+			{
+				float: none;
+				display: block;
+				width: 90%;
+				max-width: $palm-max-width;
+				margin: 0 auto 20px auto;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Chatter
+	*/
+	.chatter_list
+	{
+		clear: both;
+
+		li
+		{
+			width: auto;
+			display: block;
+			max-width: $palm-max-width;
+			margin: 0 auto;
+		}
+	}
+
+	/* ==========================================================================
+	   Icon Lists
+	*/
+	.icon_link_list,
+	.icon_details_list
+	{
+		li
+		{
+			width: 48%;
+		}
+	}
+
+	/* ==========================================================================
+	   Content grid
+	*/
+	.content_grid
+	{
+		li
+		{
+			margin: 0 5px;
+		}
+	}
+
+	/* ==========================================================================
+	   Button list
+	*/
+	.button_list li
+	{
+		display: block;
+		margin: 0.5em;
+	}
+
+	/* ==========================================================================
+	   Staff grid */
+	.staff_grid
+	{
+		> li
+		{
+			width: auto;
+			display: block;
+			height: auto !important;
+		}
+        .img_link
+        {
+            min-height: 145px;
+        }
+	}
+
+}
+
+@media only screen and (max-width: 480px)
+{
+	/* ==========================================================================
+	   Banner Rotator
+	*/
+	.banner_rotator
+	{
+		.msg
+        {
+            top: 10%;
+        }
+    }
+
+	/* ==========================================================================
+	   Tool box
+	*/
+	.tool_box
+	{
+		li
+		{
+			width: 48%;
+		}
+	}
+
+	/* ==========================================================================
+	   Galleries
+	*/
+	.gallery_list
+	{
+		li
+		{
+			width: 48%;
+			margin: 0.5em 1%;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 360px) 
+{
+	.faq .question_text
+	{
+		width: 75%;
+	}
+}

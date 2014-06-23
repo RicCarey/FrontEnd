@@ -1,0 +1,25 @@
+@import "../mixins.scss";
+
+
+
+
+/***** Everything but mobile*****/
+//needs to be a mixin rather than a placeholder because of how it works with media quiries.
+
+@mixin everythingButMobile
+{
+	//place styles that are only for desktop and subsequently IE in here, useful for overiding mobile/tablet only jquery css style.
+}
+
+@media only screen and (min-width: 767px) 
+{
+	@include everythingButMobile;
+}
+
+/*IE 8 only copy of desktop only media*/
+.lt-ie9 
+{
+	@include everythingButMobile;
+}
+
+

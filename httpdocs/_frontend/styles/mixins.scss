@@ -1,0 +1,466 @@
+//-----------Variables--------
+
+//Sizes
+$defaultRadius: 4px;
+$palm-max-width: 400px;
+$spalm-max-width: 320px;
+$palm-inner-width: 280px;
+
+//Colours 
+$colour-bg: #EEEEEE;
+$colour-body: #464f58;
+$colour-body-light: #8d8d8d;
+
+$colour-prime: #004990;
+$colour-prime-light: lighten($colour-prime, 10% );
+$colour-prime-darker: darken($colour-prime, 10% );
+
+$colour-secondary: #00aedb;
+$colour-secondary-light: lighten($colour-secondary, 10% );
+$colour-secondary-darker: darken($colour-secondary, 10% );
+$colour-secondary-vlight: lighten($colour-secondary, 50%);
+
+$colour-dark: #252525;
+$colour-grey: #464F58;
+$colour-grey-light: lighten($colour-grey, 10%);
+$colour-grey-vlight: lighten($colour-grey, 50%);
+$colour-grey-dark: darken($colour-grey, 10%);
+$colour-light-grey: #626E7B;
+$colour-vlight-grey: #F4F4F4;
+
+$color-greyblue: #66728d;
+$colour-pale-blue: #a7bbd1;
+$colour-lpale-blue: #D6E2EF;
+$colour-vpale-blue: #ECF1F6;
+$color-greyblue-dark: #A7BBD1;
+$colour-green: #1FAE9E;
+$colour-yellow: #FCCB2B;
+
+$c-hoe: #F47C31;
+$c-east: #6AAB35;
+$c-south: #861B44;
+
+$c-p-hoe: #FEF4ED;
+$c-p-east: #F8FFF3;
+$c-p-south: #FFEFF5;
+
+$c-p-orange: #F69050;
+$c-p-pink: #BC4A89;
+$c-p-green: #1FAE9E;
+$c-p-blue: #2198D4;
+
+$c-tip: #252525;
+
+$borderColourPrime: #bebdbb;
+$borderColourSecondary: #000;
+
+$theme-dark-bg: #252525;
+$theme-dark-text: #FDCB2C;
+$theme-dark-links: #00C9FB;
+
+$theme-creme-bg: #FEFF8E;
+$theme-creme-text: #000000;
+$theme-creme-links: #FF0000;
+
+//Type Styles
+
+//body font-size - used in px to em convertor so no need for px.
+$bodyfontSize: 16;
+
+@function Px($context: $bodyfontSize) {
+  @return #{$context}px
+} 
+
+@mixin bodyFontSize{font-size: Px($bodyfontSize)}
+
+
+$h1-size: 50;
+$h1-line-height: 60;
+
+$h2-size: 30;
+$h2-line-height: 40;
+
+$h3-size: 20;
+$h3-line-height: 30;
+
+$h4-size: 16;
+$h4-line-height: 24;
+
+$h5-size: 14;
+$h3-line-height: 20;
+
+$h6-size: 12;
+$h4-line-height: 18;
+
+
+
+/*-----------Mixins--------*/
+@mixin open-sans-regular($weight: normal){
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: $weight;
+}
+
+@mixin montserrat($weight: normal){
+	font-family: 'montserratregular', sans-serif;
+	font-weight: $weight;
+}
+
+
+//Calculate Em sizes from pixels. 
+@function em($pixels, $context: $bodyfontSize) {
+  @return #{$pixels/$context}em
+}
+
+//EM based font size calculated from pixel size in photoshop.
+@mixin em-font-size($px, $context: $bodyfontSize)
+{
+	font-size: em($px, $context);
+}
+
+//EM based line height calculated from pixel size in photoshop.
+@mixin em-line-height($px, $context: $bodyfontSize)
+{
+	line-height: em($px, $context);
+}
+
+
+//border-radius
+@mixin border-radius($radius: $defaultRadius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+//border-radius
+@mixin border-radius($tl: $defaultRadius, $tr: $defaultRadius, $br: $defaultRadius, $bl: $defaultRadius) {
+  -moz-border-radius: $tl $tr $br $bl;
+  border-radius: $tl $tr $br $bl;
+}
+
+
+//box-shadow
+@mixin box-shadow($horz: 0px, $vert: 0px, $blur: 3px, $spread: 0px, $color: rgba(0, 0, 0, 0.2), $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $horz $vert $blur $spread $color;
+    -moz-box-shadow:inset $horz $vert $blur $spread $color;
+    box-shadow:inset $horz $vert $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $horz $vert $blur $spread $color;
+    -moz-box-shadow: $horz $vert $blur $spread $color;
+    box-shadow: $horz $vert $blur $spread $color;
+  }
+}
+
+//Transitions
+@mixin transition($property, $duration: 0.4s, $method: ease) {
+	-webkit-transition: $property $duration $method;
+	-moz-transition: $property $duration $method;
+	-o-transition: $property $duration $method;
+	-ms-transition: $property $duration $method;
+	transition: $property $duration $method;
+}
+
+@mixin animated
+{
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+//2 colour gradient
+@mixin gradient-no-stop-top-to-bottom($colour1, $colour2)
+{
+	background: $colour1; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: -moz-linear-gradient(top,  $colour1 0%, $colour2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$colour1), color-stop(100%,$colour2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $colour1 0%, $colour2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $colour1 0%, $colour2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $colour1 0%, $colour2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  $colour1 0%, $colour2 100%); /* W3C */
+}
+
+
+//3 colour gradient
+@mixin gradient-one-stop-top-to-middle-to-bottom($colour1, $colour2, $colour3)
+{
+background: $colour2; /* Old browsers */
+background: -moz-linear-gradient(top,  $colour1 0%, $colour2 50%, $colour3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$colour1), color-stop(50%,$colour2), color-stop(100%,$colour3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  $colour1 0%,$colour2 50%,$colour3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  $colour1 0%,$colour2 50%,$colour3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  $colour1 0%,$colour2 50%,$colour3 100%); /* IE10+ */
+background: linear-gradient(to bottom,  $colour1 0%,$colour2 50%,$colour3 100%); /* W3C */
+}
+
+
+//Quick and easy border box.
+@mixin border-box
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+//Stop a user highlighting text. 
+@mixin user-select($value: none)
+{
+	-webkit-touch-callout: $value;
+	-webkit-user-select: $value;
+	-khtml-user-select: $value;
+	-moz-user-select: $value;
+	-o-user-select: $value;
+	-ms-user-select: $value;
+	user-select: $value;
+}
+
+
+//translucent style border
+@mixin translucentBorder
+{
+	border:3px solid rgba(255, 255, 255, 0.3);
+	-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+
+//Micro clearfix
+@mixin clearfix {
+    &:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+    }
+}
+
+
+//Set the opacity for all browsers and provide a filter fallback for IE8.
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+//Quickly center any element within its parent. Requires width or max-width to be set.
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// 
+// @include triangle within a pseudo element and add positioning properties (ie. top, left)
+// $direction: up, down, left, right
+//
+@mixin triangle($direction, $size: 6px, $color: #222){
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0; width: 0;
+  @if ($direction == 'up'){
+    border-bottom: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'down'){
+    border-top: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'left'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == 'right'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+@mixin triangle($direction, $height: 6px, $width: 6px, $color: #222){
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0; width: 0;
+  @if ($direction == 'up'){
+    border-bottom: $height solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+  @else if ($direction == 'down'){
+    border-top: $height solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+  @else if ($direction == 'left'){
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $height solid $color;
+  }
+  @else if ($direction == 'right'){
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $height solid $color;
+  }
+}
+
+
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+@mixin ghostVerticalAlign{
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; width: .1px;
+  }
+}
+
+// Vertical align anything with just 3 lines of CSS http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($pos: relative) {
+  position: $pos;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*add a tool tip on hover*/
+@mixin hui_tooltip($content: attr(data-tooltip), $direction: top) {
+  position: relative;
+  &:before, &:after {
+    display: none;
+    z-index: 98;
+  }
+  &:hover {
+    &:after { // for text bubble
+      content: $content;
+      display: block;
+      position: absolute;
+      height: 12px; // (makes total height including padding 22px)
+      padding: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      color: #fff;
+      @include text-shadow(1px 1px #000);
+      background-color: #222;
+    }
+    @if ($direction == 'top'){
+      &:before {
+        @include triangle(down, 6px, #222);
+        top: -6px; margin-top: 0;
+        left: 47%;
+      }
+      &:after {
+        top: -28px;
+        left: 47%; margin-left: -20px;
+      }
+    }
+    @else if ($direction == 'bottom'){
+      &:before {
+        @include triangle(up, 6px, #222);
+        top: auto; margin-top: 0;
+        bottom: -6px;
+        left: 47%;
+      }
+      &:after {
+        bottom: -28px;
+        left: 47%; margin-left: -20px;
+      }
+    }
+  }
+}
+
+@mixin transparent-background($color, $alpha, $iefix : false) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: $rgba;
+
+  @if $iefix{
+		.lt-ie9 & {
+			$ie-hex-color: ie-hex-str($rgba);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+			zoom: 1;
+		}
+	}
+}
+
+//prevent tap highlight color / shadow
+@mixin removeTapHighlight() {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+@mixin stickyFooterSmallDesk() {
+// Sticky footer
+	.sticky_footer
+	{
+		@include em-font-size(15, $bodyfontSize);
+
+		li
+		{
+			padding: 15px 10px 0 10px;
+			width: 15%;
+			text-align: left;
+			@include border-box;
+            min-height: 68px;
+
+			&:first-child
+			{
+				border-left: 0;
+			}
+
+			&:last-child
+			{
+				border-right: 0;
+			}
+		}
+
+		.lrg_item
+		{
+			width: 22%;
+		}
+
+		.text_size span,
+		.contrast span
+		{
+			display: inline-block;
+			width: 70px;
+			float: left;
+			padding: 0;
+		}
+	}
+
+	.select_lang_overlay
+	{
+		&:before
+		{
+			margin-right: 5px;
+		}
+
+
+		&:after
+		{
+			margin-left: 2px;
+		}
+	}
+
+	.browsealoud
+	{
+		a
+		{
+			padding-left: 0;
+
+			&:before
+			{
+				display: none;
+			}
+		}
+	}
+}

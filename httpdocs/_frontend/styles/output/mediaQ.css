@@ -1,0 +1,1443 @@
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+/***** Below large desktop screen *****/
+@media only screen and (max-width: 1199px) {
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  /* Banner rotator */
+  .banner_rotator p {
+    line-height: 1.2;
+  }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  .sticky_footer {
+    font-size: 0.9375em;
+  }
+  .sticky_footer li {
+    padding: 15px 10px 0 10px;
+    width: 15%;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 68px;
+  }
+  .sticky_footer li:first-child {
+    border-left: 0;
+  }
+  .sticky_footer li:last-child {
+    border-right: 0;
+  }
+  .sticky_footer .lrg_item {
+    width: 22%;
+  }
+  .sticky_footer .text_size span,
+  .sticky_footer .contrast span {
+    display: inline-block;
+    width: 70px;
+    float: left;
+    padding: 0;
+  }
+
+  .select_lang_overlay:before {
+    margin-right: 5px;
+  }
+  .select_lang_overlay:after {
+    margin-left: 2px;
+  }
+
+  .browsealoud a {
+    padding-left: 0;
+  }
+  .browsealoud a:before {
+    display: none;
+  }
+}
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+@media only screen and (min-width: 980px) {
+  /* Calendar view */
+  .calendar_toggle {
+    -moz-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 10px;
+    border: 1px solid #ecf1f6;
+  }
+  .calendar_toggle a {
+    width: 15px;
+    height: 15px;
+    display: block;
+    text-indent: -9999px;
+    background: #ecf1f6 url("/images/background/_sprite.png") no-repeat -295px -113px;
+    padding: 5px;
+    float: left;
+  }
+  .calendar_toggle a:hover, .calendar_toggle a:focus {
+    background-color: #d6e2ef;
+  }
+  .calendar_toggle .active,
+  .calendar_toggle .active:hover,
+  .calendar_toggle .active:focus {
+    background-color: #464f58;
+  }
+  .calendar_toggle .active.calendar_view,
+  .calendar_toggle .active:hover.calendar_view,
+  .calendar_toggle .active:focus.calendar_view {
+    background-position: -295px -89px;
+  }
+  .calendar_toggle .list_view {
+    background-position: -319px -90px;
+  }
+  .calendar_toggle .list_view.active {
+    background-position: -319px -113px;
+  }
+
+  .cal_view {
+    position: relative;
+    width: 920px;
+    margin: 0 auto;
+  }
+  .cal_view .days {
+    display: block;
+  }
+  .cal_view .days:after,
+  .cal_view .dates:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .cal_view .days > li,
+  .cal_view .dates > li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 130px;
+    float: left;
+  }
+  .cal_view .dates .even_w_event {
+    background-color: #eeeeee;
+  }
+  .cal_view .dates > li {
+    height: 150px;
+    border-right: 1px solid #FFF;
+    padding: 0.5em;
+  }
+  .cal_view .dates > li:nth-child(7n) {
+    border-right: 0;
+  }
+  .cal_view .dates .day_tue,
+  .cal_view .dates .day_thur,
+  .cal_view .dates .day_sat {
+    background-color: #ecf1f6;
+  }
+  .cal_view .no_events,
+  .cal_view .empty {
+    display: block;
+  }
+  .cal_view .events_day {
+    margin: 0;
+    float: none;
+  }
+  .cal_view .day {
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+    width: auto;
+    float: none;
+  }
+  .cal_view .venue {
+    display: none;
+  }
+  .cal_view .show_events {
+    display: block;
+    font-weight: 600;
+    padding-right: 30px;
+    position: relative;
+  }
+  .cal_view .show_events:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 16px;
+    height: 13px;
+    background: url("/images/background/_sprite.png") no-repeat -270px 0px;
+  }
+  .cal_view .events_pull {
+    position: absolute;
+    left: 130px;
+    width: 390px;
+    min-height: 150px;
+    padding: 10px;
+    background-color: #FFF;
+    z-index: 10;
+    color: white;
+    display: none;
+    bottom: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .cal_view .events_pull .venue {
+    display: inline-block;
+  }
+  .cal_view .events_pull .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    text-indent: -9999px;
+    background: url("/images/background/_sprite.png") no-repeat -335px -72px;
+  }
+  .cal_view .events_pull ul {
+    padding-top: 15px;
+  }
+  .cal_view .events_pull.right {
+    left: auto;
+    right: 130px;
+  }
+}
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+/***** Everything but mobile*****/
+/*IE 8 only copy of desktop only media*/
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+/***** inbetween desktop and lap *****/
+@media only screen and (min-width: 979px) and (max-width: 1199px) {
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  header .logo_container {
+    margin: 1.5em 1em 0 10px;
+    max-width: 200px;
+  }
+  header .logo_container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .primary .menu_section a {
+    padding: 3.5em 10px;
+  }
+
+  .site_search .submit {
+    width: 70px;
+  }
+
+  /* ==========================================================================
+     Rotators
+  */
+  .banner_rotator .msg,
+  .content_rotator .msg {
+    top: 10%;
+    width: 70%;
+  }
+  .banner_rotator .align-centre .msg,
+  .content_rotator .align-centre .msg {
+    margin-left: -35%;
+    left: 50%;
+  }
+}
+/***** Lap (Smaller than 979px) including mobile  *****/
+@media only screen and (max-width: 979px) {
+  .wrapper {
+    max-width: 94%;
+    min-width: 768px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .responsive_img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  header .logo_container {
+    margin: 1.5em 1em 0 1em;
+  }
+
+  .site_search input[type="search"] {
+    width: 15em;
+  }
+
+  /* ==========================================================================
+     Primary Nav
+  */
+  .primary .menu_toggle {
+    display: block;
+  }
+  .primary > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background-color: rgba(70, 79, 88, 0.8);
+  }
+  .primary > ul > li {
+    width: 50%;
+    border-bottom: 1px solid #626e7b;
+    background-color: #ecf1f6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .primary > ul > li:nth-child(odd) {
+    clear: both;
+    border-right: 1px solid #626e7b;
+  }
+  .primary .selected .menu_section {
+    border-bottom: 1px solid #ecf1f6;
+  }
+  .primary .selected .menu_section a {
+    background-color: #626e7b;
+  }
+  .primary .selected .sub_toggle {
+    background-color: #464f58;
+  }
+  .primary .selected .sub_toggle:after {
+    background-position: -190px -13px;
+  }
+  .primary .menu_section {
+    position: relative;
+    border-bottom: 1px solid transparent;
+  }
+  .primary .menu_section a {
+    height: auto;
+    padding: 1.5em 2em;
+  }
+  .primary .menu_section a:hover, .primary .menu_section a:active {
+    background-color: #004990;
+    color: #FFF;
+  }
+  .primary .has_sub a {
+    width: 85%;
+  }
+  .primary .mega_menu {
+    position: static;
+  }
+  .primary .mega_menu > ul > li,
+  .primary .mega_menu .cta_area,
+  .primary .mega_menu .section_link {
+    display: none;
+  }
+  .primary .mega_menu li {
+    width: auto;
+    float: none;
+  }
+  .primary .mega_menu li.nav_section {
+    display: block;
+  }
+  .primary .mega_menu a {
+    padding: 0.5em 0.5em 0.5em 1em;
+    position: relative;
+  }
+  .primary .mega_menu a:before {
+    content: '';
+    display: block;
+    background: url("/images/background/_sprite.png") no-repeat -192px 0px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+  }
+  .primary .mega_menu ul ul li {
+    margin: 0;
+  }
+  .primary .sub_toggle {
+    display: block;
+    width: 15%;
+    background-color: #a7bbd1;
+    border-left-color: #626e7b;
+  }
+  .primary .sub_toggle:hover, .primary .sub_toggle:focus {
+    background-color: #d6e2ef;
+  }
+
+  /* ==========================================================================
+     Sub navigation
+  */
+  .sub_nav {
+    top: 25px;
+  }
+
+  #subnav_secondary {
+    right: auto;
+    left: 0;
+    top: 25px;
+  }
+
+  .hasdoublesub {
+    position: relative;
+    min-height: 150px;
+  }
+
+  /* ==========================================================================
+     Banner Rotator
+  */
+  .banner_rotator {
+    min-height: 200px;
+  }
+  .banner_rotator p {
+    font-size: 2.25em;
+    line-height: 1.4;
+  }
+  .banner_rotator .msg {
+    top: 10%;
+    width: 90%;
+  }
+  .banner_rotator .align-centre .msg {
+    margin-left: -45%;
+    left: 50%;
+  }
+  .banner_rotator .slides img {
+    height: auto;
+  }
+
+  .content_rotator {
+    float: none;
+    width: auto;
+    margin: 0 auto 40px auto;
+  }
+  .content_rotator h2 {
+    font-size: 2.5em;
+  }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  /* Sticky footer */
+  .sticky_footer {
+    font-size: 0.875em;
+  }
+  .sticky_footer li {
+    padding: 15px 5px 15px 5px;
+    width: 12%;
+    min-height: 72px;
+  }
+  .sticky_footer .lrg_item {
+    width: 24%;
+  }
+  .sticky_footer .contrast a {
+    margin: 5px 0 0 2px;
+  }
+  .sticky_footer .text_size span,
+  .sticky_footer .contrast span {
+    width: 65px;
+  }
+  .sticky_footer .live_chat {
+    padding-bottom: 0;
+    min-height: 0x;
+  }
+
+  .footer_top {
+    padding: 30px 0;
+  }
+
+  .footer_links {
+    text-align: center;
+  }
+  .footer_links li {
+    float: none;
+    display: inline-block;
+    margin: 0px 20px 30px 20px;
+  }
+
+  footer .social_links {
+    float: none;
+    text-align: center;
+    margin: 0;
+  }
+  footer .social_links li {
+    float: none;
+    display: inline-block;
+  }
+
+  .reg_copy ul {
+    float: none;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .reg_copy .copy_notice {
+    float: none;
+    text-align: center;
+    display: block;
+  }
+
+  /* ==========================================================================
+     Page Elements 
+     ========================================================================== */
+  .breadcrumb {
+    margin-top: 1em;
+  }
+
+  /* ==========================================================================
+     Tool box
+  */
+  .tool_box ul {
+    font-size: 0.84615em;
+  }
+
+  /* ==========================================================================
+     Icon list
+  */
+  .icon_link_list {
+    font-size: 0.6875em;
+  }
+
+  /* ==========================================================================
+     Image bg modules
+  */
+  .imgbg_module {
+    min-height: 190px;
+  }
+  .imgbg_module .overlay_title {
+    display: none;
+  }
+  .imgbg_module .no_overlay_title {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: block;
+  }
+  .imgbg_module .title_link {
+    top: 0;
+    background-color: rgba(0, 73, 144, 0.7);
+  }
+  .imgbg_module:hover .title_link {
+    display: block;
+  }
+  .imgbg_module .overlay_content {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Latest Articles
+  */
+  .home .latest_articles {
+    text-align: center;
+  }
+  .home .latest_articles > div {
+    float: none;
+    display: inline-block;
+    width: 36%;
+    margin: 0 3%;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  /* Home Area map */
+  .home .area_logo_list {
+    left: 5%;
+  }
+
+  /* ==========================================================================
+     Chatter
+  */
+  .chatter_list li {
+    padding: 1em;
+  }
+
+  /* ==========================================================================
+     Tabbed content
+  */
+  .content_tabs {
+    margin: 10px 0;
+  }
+
+  /* ==========================================================================
+     Event calendar
+  */
+  .events_pull {
+    display: block !important;
+  }
+
+  /* ==========================================================================
+     Areas
+  */
+  .area_logo_list {
+    top: 1em;
+  }
+
+  /* Icon Details List */
+  .icon_details_list li {
+    width: 32%;
+  }
+
+  /* ==========================================================================
+     Module boxes
+  */
+  .module_box h2 {
+    font-size: 2.5em;
+  }
+  .module_box .more_link {
+    margin-bottom: 0;
+  }
+
+  /* ==========================================================================
+     Row accordions (Staff/Documents) */
+  .accordion_row .btn {
+    width: auto;
+  }
+
+  /* ==========================================================================
+     Staff grid */
+  .staff_grid > li {
+    width: 32%;
+  }
+
+  /* ==========================================================================
+     Listing
+  */
+  .listing .actions .btn {
+    margin: 0;
+    display: inline-block;
+    min-width: 150px;
+  }
+
+  /* Alert */
+  .alert .title {
+    font-size: 2.5em;
+  }
+  .alert .alert_content {
+    padding: 1em;
+    margin-right: 100px;
+  }
+}
+/***** inbetween lap and mobile *****/
+/*-----------Mixins--------*/
+/*Center an elemant with a ghost! http://css-tricks.com/centering-in-the-unknown/*/
+/*add a tool tip on hover*/
+/***** Palm (Smaller than  768px) *****/
+@media only screen and (max-width: 767px) {
+  .pad_50,
+  .pad_25 {
+    padding: 0;
+  }
+
+  .wrapper {
+    min-width: 500px;
+  }
+
+  .palm_only_inblock {
+    display: inline-block !important;
+  }
+
+  .palm_only_block {
+    display: block !important;
+  }
+
+  h1 {
+    font-size: 1.875em;
+  }
+
+  .rich_text_area h1 {
+    margin-top: 0;
+  }
+
+  .block_map {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  .logo {
+    width: 60px;
+    height: 60px;
+    background: url("/images/background/_sprite.png") no-repeat -295px 0px;
+  }
+  .logo img {
+    display: none;
+  }
+
+  .quick_links {
+    font-size: 0.625em;
+  }
+  .quick_links a {
+    padding: 1em;
+  }
+
+  .site_search .search_input {
+    background-color: #004990;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 10px 1em;
+    z-index: 15;
+    margin: 0;
+  }
+  .site_search input[type="search"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* ==========================================================================
+     Primary Nav
+  */
+  .primary > ul > li {
+    width: auto;
+    float: none;
+  }
+  .primary > ul > li:nth-child(odd) {
+    border-right: 0;
+  }
+
+  /* ==========================================================================
+     Sub Nav
+  */
+  .sub_nav,
+  .ddl_links,
+  .filter_form {
+    position: static;
+    width: 100%;
+  }
+
+  #subnav_secondary {
+    margin-top: 20px;
+  }
+
+  /* Filter form */
+  .filter_form li {
+    float: none;
+    padding: 0;
+    width: auto;
+  }
+
+  /* Back btn */
+  .back_btn {
+    position: static;
+    margin-bottom: 1em;
+    text-align: right;
+    font-size: 0.75em;
+  }
+
+  /* ==========================================================================
+     Banner Rotator
+  */
+  .banner_rotator {
+    min-height: 100px;
+  }
+  .banner_rotator p {
+    font-size: 1.5em;
+    max-width: 600px;
+    margin: 0 auto 10px auto;
+  }
+  .banner_rotator .msg {
+    top: 0%;
+    width: 100%;
+    padding: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .banner_rotator .align-centre .msg,
+  .banner_rotator .align-left .msg,
+  .banner_rotator .align-right .msg {
+    margin-left: -50%;
+    left: 50%;
+    right: auto;
+    text-align: center;
+  }
+
+  .content_rotator .msg {
+    top: 0%;
+    width: 100%;
+    padding: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .content_rotator .align-centre .msg,
+  .content_rotator .align-left .msg,
+  .content_rotator .align-right .msg {
+    margin-left: -50%;
+    left: 50%;
+    right: auto;
+    text-align: center;
+  }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  footer {
+    margin-bottom: 0;
+  }
+
+  .sticky_footer {
+    position: static;
+    font-size: 1em;
+  }
+  .sticky_footer:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .sticky_footer > ul {
+    display: block !important;
+    /* Force to show even if toggle hidden on larger screen */
+  }
+  .sticky_footer li {
+    width: 50%;
+    border: 0;
+    padding: 0;
+  }
+  .sticky_footer .lrg_item {
+    float: none;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #a7bbd1;
+    padding: 20px 30px;
+  }
+  .sticky_footer .text_size span,
+  .sticky_footer .contrast span {
+    width: auto;
+    margin-right: 20px;
+    padding-top: 10px;
+  }
+  .sticky_footer .live_chat {
+    float: left;
+    display: block;
+  }
+  .sticky_footer .live_chat a {
+    padding: 20px 30px 20px 50px;
+  }
+  .sticky_footer .live_chat a:before {
+    left: 10px;
+  }
+  .sticky_footer .live_chat a:after {
+    right: 10px;
+  }
+  .sticky_footer .browsealoud {
+    display: block;
+    float: left;
+  }
+  .sticky_footer .browsealoud a {
+    border-left: 1px solid #a7bbd1;
+    padding: 20px;
+  }
+
+  .accessibility_toggle {
+    display: none;
+  }
+
+  .footer_links li {
+    display: block;
+    margin: 0 0 1em 0;
+  }
+
+  .accreditations {
+    float: none;
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .quick_site_links {
+    margin: 0 0 30px 0;
+    float: none;
+    text-align: center;
+  }
+  .quick_site_links li {
+    display: block;
+    float: none;
+    border: 0;
+    margin-bottom: 1em;
+  }
+
+  .reg_copy {
+    padding: 2em;
+  }
+  .reg_copy li {
+    display: block;
+    border: 0;
+    margin-bottom: 1em;
+  }
+
+  /* ==========================================================================
+     Page Elements 
+     ========================================================================== */
+  /* Breadcrumb */
+  .breadcrumb {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Related Links
+  */
+  .related_links li {
+    float: none;
+    width: auto;
+  }
+
+  /* ==========================================================================
+     Tool box
+  */
+  .tool_box li {
+    float: none;
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .tool_box.open ul {
+    height: auto;
+    max-height: 600px;
+  }
+  .tool_box .link-text:after {
+    display: none;
+  }
+
+  .home .tool_box a {
+    padding: 20px 1em;
+  }
+
+  /* ==========================================================================
+     Icon Link List
+  */
+  .icon_link_list li {
+    float: none;
+    width: 30%;
+  }
+
+  /* FAQ accordion */
+  .faq .question_text {
+    width: 80%;
+  }
+  .faq dt a {
+    padding: 10px 20px;
+  }
+  .faq dt a:after {
+    display: none;
+  }
+  .faq dd {
+    padding: 10px 20px;
+  }
+
+  /* ==========================================================================
+     Area Map
+  */
+  .area_map_container {
+    display: none;
+  }
+
+  /* Home Area map */
+  .home .area_map_container {
+    display: block;
+    background-color: #eeeeee;
+  }
+  .home .area_map {
+    display: none;
+  }
+
+  /* Map locations */
+  .locations li {
+    width: auto;
+    display: block;
+    padding: 1em 0;
+  }
+
+  /* ==========================================================================
+     Tabbed content
+  */
+  .content_tabs {
+    border-bottom: 1px solid #d6e2ef;
+  }
+  .content_tabs .tabs > li {
+    float: none;
+    margin: 0;
+  }
+  .content_tabs .tab_link {
+    padding: 1em 2em;
+    position: relative;
+  }
+  .content_tabs .tab_link:before {
+    content: '';
+    background: url("/images/background/_sprite.png") no-repeat -99px -38px;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    height: 10px;
+    width: 10px;
+    margin-top: -4px;
+  }
+  .content_tabs .tab_link.active:before {
+    background-position: -62px -38px;
+  }
+  .content_tabs .tab_content {
+    padding: 1em;
+  }
+
+  /* ==========================================================================
+     Section intro
+  */
+  .section_intro {
+    text-align: center;
+  }
+  .section_intro h1, .section_intro p, .section_intro img {
+    margin: 0;
+  }
+  .section_intro p {
+    font-size: 1em;
+  }
+
+  /* ==========================================================================
+     Chatter
+  */
+  .chatter {
+    text-align: center;
+    margin: 0;
+  }
+  .chatter .social_links {
+    position: static;
+    float: none;
+    margin: 0 0 30px 0;
+  }
+  .chatter .social_links .label {
+    font-size: 1.125em;
+    display: block;
+    margin: 0;
+  }
+  .chatter .social_links li {
+    float: none;
+    display: inline-block;
+  }
+  .chatter img {
+    float: none;
+    margin: 15px 0;
+  }
+
+  .chatter_list li {
+    text-align: center;
+  }
+
+  /* ==========================================================================
+     Image bg modules
+  */
+  .imgbg_module {
+    background-size: cover;
+  }
+
+  /* ==========================================================================
+     Scheme Locator
+  */
+  .scheme_form li {
+    float: none;
+    width: auto;
+    padding-right: 0;
+  }
+  .scheme_form .submit_itm {
+    padding: 20px 0;
+  }
+
+  .scheme_locator_results .section_border_top {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ==========================================================================
+     Search form
+  */
+  .search_form li {
+    float: none;
+    width: auto;
+    padding-right: 0;
+  }
+
+  /* ==========================================================================
+     Scheme Details
+  */
+  .scheme_header {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+  }
+  .scheme_header h3,
+  .scheme_header p {
+    float: none;
+    width: auto;
+  }
+  .scheme_header h3 {
+    margin-bottom: 0.5em;
+  }
+  .scheme_header p {
+    text-align: left;
+  }
+
+  /* ==========================================================================
+     Listing
+  */
+  .listing {
+    margin: 0;
+  }
+  .listing img {
+    margin: 0 auto;
+    float: none;
+    max-width: 280px;
+  }
+  .listing .img_link {
+    text-align: center;
+  }
+  .listing h3, .listing p {
+    margin: 0;
+  }
+  .listing .btn {
+    margin: 0;
+    display: inline-block;
+    padding: 12px 30px;
+  }
+
+  /* ==========================================================================
+     Events
+  */
+  .events_list .events_day {
+    float: none;
+    margin-left: 10px;
+    clear: left;
+    padding-top: 10px;
+  }
+
+  /* ==========================================================================
+     Areas
+  */
+  .area_logo_list {
+    position: static;
+    width: 250px;
+    margin: 0 auto;
+  }
+  .area_logo_list li {
+    margin: 40px 0;
+    position: relative;
+    display: block;
+    float: none;
+  }
+  .area_logo_list .area_logo .title {
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 30px;
+    color: #464f58;
+  }
+  .area_logo_list .area_logo .title:hover {
+    color: #004990;
+  }
+
+  .home .area_logo_list {
+    width: 300px;
+  }
+  .home .area_logo_list li {
+    margin: 1em 0;
+  }
+  .home .area_logo {
+    display: inline-block;
+  }
+  .home .area_logo .title {
+    top: 65px;
+    left: 144px;
+  }
+
+  .area_logo {
+    text-align: center;
+    float: none;
+    margin: 10px auto 0 auto;
+  }
+
+  /* Icon Details List */
+  .icon_details_list p {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Content grid
+  */
+  .content_grid li {
+    margin: 0 10px;
+    padding: 1em 0;
+  }
+
+  /* ==========================================================================
+     Module boxes
+  */
+  .module_box h2 {
+    font-size: 1.875em;
+    min-height: 2.5em;
+  }
+  .module_box .more_link {
+    margin-bottom: 0;
+  }
+
+  /* ==========================================================================
+  	Social share
+  */
+  .social_share {
+    margin: 0;
+  }
+
+  /* ==========================================================================
+     Row accordions (Staff/Documents) */
+  .accordion_row .btn {
+    float: left;
+    margin-left: 40px;
+    margin-top: 0;
+  }
+  .accordion_row .year {
+    display: inline;
+  }
+  .accordion_row .label {
+    margin-top: 0;
+    width: 50%;
+  }
+
+  /* ==========================================================================
+     Documents list */
+  .documents_list .document_link {
+    float: none;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  /* Years list */
+  .years_list {
+    font-size: 1.875em;
+  }
+
+  /* ==========================================================================
+     Staff grid */
+  .staff_grid {
+    padding: 0;
+  }
+  .staff_grid > li {
+    width: 45%;
+    border-bottom: 0;
+    height: auto !important;
+  }
+  .staff_grid > li:last-child {
+    padding-bottom: 0;
+  }
+  .staff_grid > li > div {
+    height: auto !important;
+  }
+  .staff_grid .img_link {
+    text-align: center;
+  }
+
+  /* ==========================================================================
+     Staff profile */
+  .staff_profile .img_float_left {
+    float: none;
+    margin: 0 auto 1em auto;
+  }
+
+  /* Alert */
+  .alert .title {
+    float: none;
+    font-size: 1.875em;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .alert p {
+    font-size: 0.875em;
+  }
+  .alert .alert_content {
+    padding: 0.5em;
+    float: none;
+    width: auto;
+    margin: 0;
+  }
+  .alert .hide {
+    background-color: transparent;
+    float: right;
+    padding: 0.5em;
+    width: auto;
+    display: block;
+    text-align: left;
+    position: static;
+  }
+  .alert .hide:hover {
+    background-color: transparent;
+  }
+  .alert .icon-search {
+    float: left;
+    margin-right: 10px;
+  }
+
+  /* ==========================================================================
+     Galleries
+  */
+  .gallery_list li {
+    width: 32%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 620px) {
+  /* ==========================================================================
+     Banner Rotator
+  */
+  .banner_rotator .msg {
+    padding: 5px;
+  }
+  .banner_rotator p {
+    margin-bottom: 5px;
+  }
+  .banner_rotator .flex-control-paging {
+    right: 5px;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 567px) {
+  .wrapper {
+    min-width: 0;
+    max-width: none;
+  }
+
+  /* ==========================================================================
+     Header
+  */
+  .user_actions {
+    float: none;
+    text-align: center;
+    padding: 0;
+  }
+
+  .quick_links ul {
+    float: none;
+    text-align: center;
+  }
+
+  /* ==========================================================================
+     Image bg modules
+  */
+  .imgbg_module {
+    float: none;
+    width: auto;
+    max-width: 400px;
+    margin: 0 auto 10px auto;
+  }
+  .imgbg_module:nth-child(3n) {
+    margin: 0 auto 10px auto;
+  }
+
+  /* ==========================================================================
+     Content Rotator
+  */
+  .content_rotator {
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  /* ==========================================================================
+     Latest Articles
+  */
+  .home .latest_articles > div {
+    float: none;
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+  }
+
+  /* ==========================================================================
+     Chatter
+  */
+  .chatter_list {
+    clear: both;
+  }
+  .chatter_list li {
+    width: auto;
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* ==========================================================================
+     Icon Lists
+  */
+  .icon_link_list li,
+  .icon_details_list li {
+    width: 48%;
+  }
+
+  /* ==========================================================================
+     Content grid
+  */
+  .content_grid li {
+    margin: 0 5px;
+  }
+
+  /* ==========================================================================
+     Button list
+  */
+  .button_list li {
+    display: block;
+    margin: 0.5em;
+  }
+
+  /* ==========================================================================
+     Staff grid */
+  .staff_grid > li {
+    width: auto;
+    display: block;
+    height: auto !important;
+  }
+  .staff_grid .img_link {
+    min-height: 145px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* ==========================================================================
+     Banner Rotator
+  */
+  .banner_rotator .msg {
+    top: 10%;
+  }
+
+  /* ==========================================================================
+     Tool box
+  */
+  .tool_box li {
+    width: 48%;
+  }
+
+  /* ==========================================================================
+     Galleries
+  */
+  .gallery_list li {
+    width: 48%;
+    margin: 0.5em 1%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .faq .question_text {
+    width: 75%;
+  }
+}

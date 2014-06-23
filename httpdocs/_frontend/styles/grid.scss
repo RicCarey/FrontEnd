@@ -1,0 +1,275 @@
+@import "mixins.scss";
+
+/* 
+* Prodo Custom Amazium V1.1
+
+* Amazium V1.3
+* Copyright 2012, Mike Ballan
+* www.amazium.co.uk
+*/
+
+/**
+ * Set the spacing between your grid items.
+ */
+$gutter:                10px;
+$gridWidthDesk:			60px;
+$gridWidthLap:			44px;
+$gridWidthPalm:			300px;
+
+@mixin grid-item {
+	margin:0 $gutter 0 $gutter;
+	float:left;
+	display:block;
+}
+
+@mixin grid_1($gridType)
+{
+	width:$gridType; @include grid-item; 
+}
+
+@mixin grid($gridInt, $gutterInt, $gridType) 
+{
+	width:($gridType * $gridInt) + ($gutter * $gutterInt); @include grid-item;
+}
+
+
+/***** Screen bigger than 979px *****/
+
+.row 								{ margin:0 auto; width:960px; }
+.row .row 							{ margin:0 (-$gutter); width:auto; display:inline-block; }
+
+	
+.grid_1						{ @include grid_1($gridWidthDesk); }									
+.grid_2						{ @include grid(2,2, $gridWidthDesk) }
+.grid_3						{ @include grid(3,4, $gridWidthDesk) }
+.grid_4						{ @include grid(4,6, $gridWidthDesk)}
+.grid_5						{ @include grid(5,8, $gridWidthDesk)}		
+.grid_6						{ @include grid(6,10, $gridWidthDesk)}
+.grid_7						{ @include grid(7,12, $gridWidthDesk)}
+.grid_8						{ @include grid(8,14, $gridWidthDesk)}
+.grid_9					    { @include grid(9,16, $gridWidthDesk)}
+.grid_10					{ @include grid(10,18, $gridWidthDesk) }
+.grid_11					{ @include grid(11,20, $gridWidthDesk) }
+.grid_12					{ @include grid(12,22, $gridWidthDesk) }
+
+	
+img.grid_1,		
+img.grid_2, 	
+img.grid_3, 	
+img.grid_4, 	
+img.grid_5, 	
+img.grid_6, 	
+img.grid_7, 	
+img.grid_8, 	
+img.grid_9,		
+img.grid_10,	
+img.grid_11,	
+img.grid_12	
+{
+	display: block;
+}
+
+.offset_1							{ margin-left: ($gridWidthDesk + ($gutter * 3)); }
+.offset_2							{ margin-left: (($gridWidthDesk * 2) + ($gutter * 5)); }
+.offset_3 							{ margin-left: (($gridWidthDesk * 3) + ($gutter * 7)); }
+.offset_4 							{ margin-left: (($gridWidthDesk * 4) + ($gutter * 9)); }
+.offset_5 							{ margin-left: (($gridWidthDesk * 5) + ($gutter * 11)); }
+.offset_6 							{ margin-left: (($gridWidthDesk * 6) + ($gutter * 13)); }
+.offset_7 							{ margin-left: (($gridWidthDesk * 7) + ($gutter * 15)); }
+.offset_8 							{ margin-left: (($gridWidthDesk * 8) + ($gutter * 17)); }
+.offset_9							{ margin-left: (($gridWidthDesk * 9) + ($gutter * 19)); }
+.offset_10							{ margin-left: (($gridWidthDesk * 10) + ($gutter * 21)); }
+.offset_11							{ margin-left: (($gridWidthDesk * 11) + ($gutter * 23)); }
+
+/* helpful basic grid elements */
+.row_90
+{
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+.row_100
+{
+	width: 100%;
+	margin: 0 auto;
+	@include clearfix;
+}
+
+.row_max
+{
+	width: 100%;
+	margin: 0 auto;
+	@include clearfix;
+	max-width: 1280px;
+}
+
+.grid_1_2
+{
+	width: 50%;
+}
+
+.grid_1_3
+{
+	width: 33%;
+}
+
+.grid_1_4
+{
+	width: 25%;
+}
+
+.desk_fixed_1-4
+{
+	width: 220px;
+}
+
+.palm_only_inblock
+{
+	display: none !important;
+}
+
+.palm_only_block
+{
+	display: none !important;
+}
+
+/***** Lap (Smaller than 979px) *****/
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+.row 								{ margin:0 auto; width:768px; }
+.row .row 							{ margin:0 (-$gutter); width:auto; display:inline-block; }
+		
+		
+	.grid_1						{ @include grid_1($gridWidthLap); }									
+	.grid_2						{ @include grid(2,2, $gridWidthLap) }
+	.grid_3						{ @include grid(3,4, $gridWidthLap) }
+	.grid_4						{ @include grid(4,6, $gridWidthLap)}
+	.grid_5						{ @include grid(5,8, $gridWidthLap)}		
+	.grid_6						{ @include grid(6,10, $gridWidthLap)}
+	.grid_7						{ @include grid(7,12, $gridWidthLap)}
+	.grid_8						{ @include grid(8,14, $gridWidthLap)}
+	.grid_9					    { @include grid(9,16, $gridWidthLap)}
+	.grid_10					{ @include grid(10,18, $gridWidthLap) }
+	.grid_11					{ @include grid(11,20, $gridWidthLap) }
+	.grid_12					{ @include grid(12,22, $gridWidthLap) }
+	
+	//appears after to overrule the standard grid_...	
+	.lap_grid_1						{ @include grid_1($gridWidthLap); }									
+	.lap_grid_2						{ @include grid(2,2, $gridWidthLap) }
+	.lap_grid_3						{ @include grid(3,4, $gridWidthLap) }
+	.lap_grid_4						{ @include grid(4,6, $gridWidthLap)}
+	.lap_grid_5						{ @include grid(5,8, $gridWidthLap)}		
+	.lap_grid_6						{ @include grid(6,10, $gridWidthLap)}
+	.lap_grid_7						{ @include grid(7,12, $gridWidthLap)}
+	.lap_grid_8						{ @include grid(8,14, $gridWidthLap)}
+	.lap_grid_9					    { @include grid(9,16, $gridWidthLap)}
+	.lap_grid_10					{ @include grid(10,18, $gridWidthLap) }
+	.lap_grid_11					{ @include grid(11,20, $gridWidthLap) }
+	.lap_grid_12					{ @include grid(12,22, $gridWidthLap) }
+
+
+  
+	.offset_1							{ margin-left: ($gridWidthLap + ($gutter * 3)); }
+	.offset_2							{ margin-left: (($gridWidthLap * 2) + ($gutter * 5)); }
+	.offset_3 							{ margin-left: (($gridWidthLap * 3) + ($gutter * 7)); }
+	.offset_4 							{ margin-left: (($gridWidthLap * 4) + ($gutter * 9)); }
+	.offset_5 							{ margin-left: (($gridWidthLap * 5) + ($gutter * 11)); }
+	.offset_6 							{ margin-left: (($gridWidthLap * 6) + ($gutter * 13)); }
+	.offset_7 							{ margin-left: (($gridWidthLap * 7) + ($gutter * 15)); }
+	.offset_8 							{ margin-left: (($gridWidthLap * 8) + ($gutter * 17)); }
+	.offset_9							{ margin-left: (($gridWidthLap * 9) + ($gutter * 19)); }
+	.offset_10							{ margin-left: (($gridWidthLap * 10) + ($gutter * 21)); }
+	.offset_11							{ margin-left: (($gridWidthLap * 11) + ($gutter * 23)); }
+
+	.row_max
+	{
+		max-width: 94%;
+		min-width: 768px;
+	}
+
+}
+
+@media only screen and (max-width: 979px) 
+{
+	img.grid_1,		
+	img.grid_2, 	
+	img.grid_3, 	
+	img.grid_4, 	
+	img.grid_5, 	
+	img.grid_6, 	
+	img.grid_7, 	
+	img.grid_8, 	
+	img.grid_9,		
+	img.grid_10,	
+	img.grid_11,	
+	img.grid_12	
+	{
+		height: auto;
+	}
+}
+
+/***** Palm (Smaller than  768px) *****/
+@media only screen and (max-width: 767px) {
+
+	.row 								{ margin:0 auto; width:90%; }
+	.row .row 							{ margin:0; width:100%; display:inline-block; }
+		
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12
+	{ width:100%; margin: 10px 0; overflow:hidden; float:left; display:inline;  }
+
+	.palm_grid_max
+	{
+		max-width: 300px;
+		margin: 0 auto;
+        float: none;
+        display: block;
+	}
+
+
+	.offset_1,
+	.offset_2,
+	.offset_3,
+	.offset_4,
+	.offset_5,
+	.offset_6,
+	.offset_7,
+	.offset_8,
+	.offset_9,
+	.offset_10,
+	.offset_11{ margin-left:0; }
+	
+	.row_90
+	{
+		width: 100%;
+	}
+
+	.palm_fixed_1-2
+	{
+		width: 130px;
+	}
+
+	.row_max
+	{
+		max-width: 94%;
+	}
+
+}	 
+
+.row
+{
+  @include clearfix;
+}
+
+

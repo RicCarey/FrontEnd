@@ -1,0 +1,275 @@
+﻿@{
+    Page.Title = "Playground";
+    Layout = "_SubPageMaster.cshtml";
+}
+
+
+
+
+<div class="rich-text-area">
+    <p>Form:</p>
+
+
+    <script type="text/javascript">
+        var contourDateFormat = "dd/mm/yy";
+    </script>
+    <script type="text/javascript" src="/umbraco/plugins/umbracocontour/scripts/frontend/contourform.js"></script>
+    <script type="text/javascript">
+        var contourFieldValues4374aee54c994255998d6d491b45d229;
+
+        (function ($) {
+            $(function () {
+
+                $("#contour_form_Playground .contourPage input").change(function () {
+                    PopulateFieldValues4374aee54c994255998d6d491b45d229();
+                    CheckRules4374aee54c994255998d6d491b45d229();
+                });
+
+                $("#contour_form_Playground .contourPage select").change(function () {
+                    PopulateFieldValues4374aee54c994255998d6d491b45d229();
+                    CheckRules4374aee54c994255998d6d491b45d229();
+                });
+
+                PopulateFieldValues4374aee54c994255998d6d491b45d229();
+                CheckRules4374aee54c994255998d6d491b45d229();
+            });
+
+        }(jQuery));
+
+        function PopulateFieldValues4374aee54c994255998d6d491b45d229() {
+            //fill field values
+            //contourFieldValues = new Array();
+            PopulateRecordValues4374aee54c994255998d6d491b45d229();
+
+            $("#contour_form_Playground .contourPage select").each(function () {
+                contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("id")] = $("option[value='" + $(this).val() + "']", $(this)).text();
+            });
+
+            $("#contour_form_Playground .contourPage input").each(function () {
+
+
+
+                if ($(this).attr('type') == "text") {
+                    contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("id")] = $(this).val();
+                }
+
+                if ($(this).attr('type') == "radio") {
+                    if ($(this).is(':checked')) {
+                        contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("name")] = $(this).val();
+                    }
+                }
+
+                if ($(this).attr('type') == "checkbox") {
+
+                    if ($(this).attr('id') != $(this).attr('name')) {
+                        if ($(this).is(':checked')) {
+                            if (contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("name")] == null) {
+                                contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("name")] = $(this).val();
+                            }
+                            else {
+                                contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("name")] += "," + $(this).val();
+                            }
+                        }
+                    } else {
+
+                        contourFieldValues4374aee54c994255998d6d491b45d229[$(this).attr("name")] = $(this).is(':checked').toString();
+                    }
+                }
+
+            });
+        }
+
+        function PopulateRecordValues4374aee54c994255998d6d491b45d229() {
+            contourFieldValues4374aee54c994255998d6d491b45d229 = new Array();
+
+        }
+
+        function CheckRules4374aee54c994255998d6d491b45d229() {
+
+
+        }
+    </script>        <link href="/umbraco/plugins/umbracocontour/css/jquery-ui-1.8.18.custom.css" type="text/css" rel="stylesheet">
+    <link href="/umbraco/plugins/umbracocontour/css/defaultform.css" type="text/css" rel="stylesheet">
+    <div class="contour playground" id="contour_form_Playground">
+        <form method="post" enctype="multipart/form-data" action="" novalidate="novalidate">
+            <input type="hidden" value="CMApL9MgquZ_afFX88C7nOxwtKcvKF0--tl8cxOe2tLpX5JxBaZTEHWFM-GIoqDKP096geUg2hXE5kLYs6hkMQRv0a5dIyDOKDdkcRaguerLTlnayfw7EJgw36jYdIO9UTJ3PxeHZjnztKviw68ViCoRubv7ya3Jy4nViI_eQPA1" name="__RequestVerificationToken"><input type="hidden" value="4374aee5-4c99-4255-998d-6d491b45d229" name="FormId" id="FormId" data-val-required="The FormId field is required." data-val="true">            <input type="hidden" value="1" id="FormStep" name="FormStep">
+            <input type="hidden" id="RecordId" name="RecordId">
+            <input type="hidden" value="" id="PreviousClicked" name="PreviousClicked">
+            <div class="contourPage">
+                <h4 class="contourPageName">Contact</h4>
+                <fieldset class="contourFieldSet">
+                    <legend>Contact</legend>
+                    <div class="contourField name textfield mandatory">
+                        <label class="fieldLabel" for="607c3f15-2936-4f22-acbe-ee69d3967189">Name </label>                                <div>
+                            <input type="text" data-val-required="Name is mandatory" data-val="true" maxlength="500" value="" class="text" id="607c3f15-2936-4f22-acbe-ee69d3967189" name="607c3f15-2936-4f22-acbe-ee69d3967189">
+
+
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="607c3f15-2936-4f22-acbe-ee69d3967189" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField email textfield mandatory alternating">
+                        <label class="fieldLabel" for="69db7372-cdb7-484d-80a5-882d4706e80f">Email </label>                                <div>
+                            <input type="text" data-regex="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" data-val-regex="Email is not valid" data-val-required="Email is mandatory" data-val="true" maxlength="500" value="" class="text" id="69db7372-cdb7-484d-80a5-882d4706e80f" name="69db7372-cdb7-484d-80a5-882d4706e80f">
+
+
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="69db7372-cdb7-484d-80a5-882d4706e80f" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField message textarea mandatory">
+                        <label class="fieldLabel" for="b3c7ccdc-668c-4463-a692-c08df82baef1">Message </label>                                <div>
+                            <textarea data-val-required="Message is mandatory" data-val="true" cols="20" rows="2" id="b3c7ccdc-668c-4463-a692-c08df82baef1" name="b3c7ccdc-668c-4463-a692-c08df82baef1"></textarea>
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="b3c7ccdc-668c-4463-a692-c08df82baef1" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField checkbox checkbox alternating">
+                        <label class="fieldLabel" for="855738a1-bc5d-4b23-ad10-4a74fa87d956">Checkbox </label>                                <div>
+                            <input type="checkbox" id="855738a1-bc5d-4b23-ad10-4a74fa87d956" name="855738a1-bc5d-4b23-ad10-4a74fa87d956">
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="855738a1-bc5d-4b23-ad10-4a74fa87d956" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField checkboxlist checkboxlist">
+                        <label class="fieldLabel" for="2c87b39f-abbc-4ee6-b543-97db4ee07f1c">Checkbox List </label>                                <div>
+                            <span id="2c87b39f-abbc-4ee6-b543-97db4ee07f1c" class="checkboxlist">
+                                <input type="checkbox" value="item 1" id="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_dfa309ee-593c-465e-9d4f-041083600b12" name="2c87b39f-abbc-4ee6-b543-97db4ee07f1c">
+                                <label for="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_dfa309ee-593c-465e-9d4f-041083600b12">item 1</label>
+                                <br>
+                                <input type="checkbox" value="item 2" id="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_41186180-0a51-4e18-bd3d-e2be54cfc310" name="2c87b39f-abbc-4ee6-b543-97db4ee07f1c">
+                                <label for="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_41186180-0a51-4e18-bd3d-e2be54cfc310">item 2</label>
+                                <br>
+                                <input type="checkbox" value="item 3" id="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_019f91cd-fb7a-44b7-bc68-acf8b53fe03d" name="2c87b39f-abbc-4ee6-b543-97db4ee07f1c">
+                                <label for="2c87b39f-abbc-4ee6-b543-97db4ee07f1c_019f91cd-fb7a-44b7-bc68-acf8b53fe03d">item 3</label>
+                                <br>
+
+                            </span>
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="2c87b39f-abbc-4ee6-b543-97db4ee07f1c" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField datepicker datepicker alternating">
+                        <label class="fieldLabel" for="59b413cd-1f6c-4627-a953-ceea254bc42c">Date Picker </label>                                <div>
+                            <input type="text" value="" class="datepickerfield hasDatepicker" id="59b413cd-1f6c-4627-a953-ceea254bc42c" name="59b413cd-1f6c-4627-a953-ceea254bc42c">
+                            <span data-valmsg-replace="true" data-valmsg-for="59b413cd-1f6c-4627-a953-ceea254bc42c" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField dropdownlist dropdownlist">
+                        <label class="fieldLabel" for="67f28848-725b-46d3-8c91-ff18cd1ff30f">Dropdown List </label>                                <div>
+                            <select id="67f28848-725b-46d3-8c91-ff18cd1ff30f" name="67f28848-725b-46d3-8c91-ff18cd1ff30f">
+                                <option value=""></option>
+                                <option value="item 1">item 1</option>
+                                <option value="item 2">item 2</option>
+                                <option value="item 3">item 3</option>
+                                <option value="item 4">item 4</option>
+                            </select>
+
+                            <span data-valmsg-replace="true" data-valmsg-for="67f28848-725b-46d3-8c91-ff18cd1ff30f" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField fileupload fileupload alternating">
+                        <label class="fieldLabel" for="5ea028cc-99ca-4bbc-bc89-081df233aea0">File Upload </label>                                <div>
+                            <input type="file" id="5ea028cc-99ca-4bbc-bc89-081df233aea0" name="5ea028cc-99ca-4bbc-bc89-081df233aea0">
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="5ea028cc-99ca-4bbc-bc89-081df233aea0" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField hiddenfield hiddenfield">
+                        <div>
+                            <input type="hidden" value="" class="hidden" id="5eeb4c7b-84f9-4129-bf84-34896496979d" name="5eeb4c7b-84f9-4129-bf84-34896496979d">
+
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="5eeb4c7b-84f9-4129-bf84-34896496979d" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField passwordfeild passwordfield alternating">
+                        <label class="fieldLabel" for="4630060f-5c7e-45c1-b404-7b40070e06f1">Password Feild </label>                                <div>
+                            <input type="password" value="" class="text" id="4630060f-5c7e-45c1-b404-7b40070e06f1" name="4630060f-5c7e-45c1-b404-7b40070e06f1">
+
+                            <span data-valmsg-replace="true" data-valmsg-for="4630060f-5c7e-45c1-b404-7b40070e06f1" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField radiobuttonlist radiobuttonlist">
+                        <label class="fieldLabel" for="42f630fc-d221-49fb-a5ae-f93a50328ee9">Radio button list </label>                                <div>
+                            <span id="42f630fc-d221-49fb-a5ae-f93a50328ee9" class="radiobuttonlist">
+                                <input type="radio" value="item 1" id="42f630fc-d221-49fb-a5ae-f93a50328ee9_789ba967-6289-4c4f-b41b-4b06dd2453f9" name="42f630fc-d221-49fb-a5ae-f93a50328ee9">
+                                <label for="42f630fc-d221-49fb-a5ae-f93a50328ee9_789ba967-6289-4c4f-b41b-4b06dd2453f9">item 1</label>
+                                <br>
+                                <input type="radio" value="item 2" id="42f630fc-d221-49fb-a5ae-f93a50328ee9_984d4800-a985-433a-acdb-e0f304075626" name="42f630fc-d221-49fb-a5ae-f93a50328ee9">
+                                <label for="42f630fc-d221-49fb-a5ae-f93a50328ee9_984d4800-a985-433a-acdb-e0f304075626">item 2</label>
+                                <br>
+                                <input type="radio" value="item 3" id="42f630fc-d221-49fb-a5ae-f93a50328ee9_3e12cb8b-834b-419f-b83d-e7edf9a3a81d" name="42f630fc-d221-49fb-a5ae-f93a50328ee9">
+                                <label for="42f630fc-d221-49fb-a5ae-f93a50328ee9_3e12cb8b-834b-419f-b83d-e7edf9a3a81d">item 3</label>
+                                <br>
+                            </span>
+                            <span data-valmsg-replace="true" data-valmsg-for="42f630fc-d221-49fb-a5ae-f93a50328ee9" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField recaptcha recaptcha alternating">
+                        <label class="fieldLabel" for="180f99cb-5d94-401d-b31f-daa0b49411bc">recaptcha </label>                                <div>
+                            <script type="text/javascript">
+                                var RecaptchaOptions = {
+                                    theme: '',
+                                    tabindex: 0
+                                };
+
+                            </script>
+                            <script src="http://www.google.com/recaptcha/api/challenge?k=6LeqoNsSAAAAAOQrdqDFE5KAzDESxxxODLpOeJjh&amp;hl=&amp;" type="text/javascript">
+
+                            </script>
+                            <script src="http://www.google.com/recaptcha/api/js/recaptcha.js" type="text/javascript"></script><div style="" id="recaptcha_widget_div" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table class="recaptchatable recaptcha_theme_red" id="recaptcha_table"> <tbody><tr> <td class="recaptcha_r1_c1" colspan="6"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td class="recaptcha_image_cell" colspan="4"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img width="300" height="57" src="http://www.google.com/recaptcha/api/image?c=03AHJ_VuvZM6aCNOjsy_R-vb5X9Jzdpmp1pSP1qOzsM2gMIkdivBC5HieOvwOX9uOUB8Hgp6xovPitRl7vjG3wNj8jabGB2GFjMuYf4en6DVNNC9BJGirC5tZpsFEsXRr2QzMaoKWUdx_pIvaLqSIDaKmAGqQYVEcbgkF3nGAWgH2tBD8As5wlm7ROdA1oWeSmx6jyiqAIC6avtd8rGHcsGd3tjV_uOr9V8-FyRxcN3BOA0CHkKYvE1SM" alt="reCAPTCHA challenge image" id="recaptcha_challenge_image"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td class="recaptcha_r3_c1" rowspan="6"></td> <td class="recaptcha_r3_c2" colspan="4"></td> <td class="recaptcha_r3_c3" rowspan="6"></td> </tr> <tr> <td height="49" class="recaptcha_r4_c1" rowspan="3"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" value="03AHJ_VuvZM6aCNOjsy_R-vb5X9Jzdpmp1pSP1qOzsM2gMIkdivBC5HieOvwOX9uOUB8Hgp6xovPitRl7vjG3wNj8jabGB2GFjMuYf4en6DVNNC9BJGirC5tZpsFEsXRr2QzMaoKWUdx_pIvaLqSIDaKmAGqQYVEcbgkF3nGAWgH2tBD8As5wlm7ROdA1oWeSmx6jyiqAIC6avtd8rGHcsGd3tjV_uOr9V8-FyRxcN3BOA0CHkKYvE1SM" id="recaptcha_challenge_field" name="recaptcha_challenge_field"></span><input type="text" placeholder="Type the text" autocapitalize="off" autocorrect="off" id="recaptcha_response_field" name="recaptcha_response_field" autocomplete="off"> <span class="recaptcha_only_if_privacy" id="recaptcha_privacy"><a href="http://www.google.com/intl/en/policies/" target="_blank">Privacy &amp; Terms</a></span> </div> </td> <td class="recaptcha_r4_c2" rowspan="4"></td> <td><a id="recaptcha_reload_btn" title="Get a new challenge"><img width="25" height="17" id="recaptcha_reload" src="http://www.google.com/recaptcha/api/img/red/refresh.gif" alt="Get a new challenge"></a></td> <td class="recaptcha_r4_c4" rowspan="4"></td> </tr> <tr> <td><a class="recaptcha_only_if_image" id="recaptcha_switch_audio_btn" title="Get an audio challenge"><img width="25" height="16" alt="Get an audio challenge" id="recaptcha_switch_audio" src="http://www.google.com/recaptcha/api/img/red/audio.gif"></a><a class="recaptcha_only_if_audio" id="recaptcha_switch_img_btn" title="Get a visual challenge"><img width="25" height="16" alt="Get a visual challenge" id="recaptcha_switch_img" src="http://www.google.com/recaptcha/api/img/red/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Help"><img width="25" height="16" id="recaptcha_whatsthis" src="http://www.google.com/recaptcha/api/img/red/help.gif" alt="Help"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div><noscript>
+                                &lt;iframe src="http://www.google.com/recaptcha/api/noscript?k=6LeqoNsSAAAAAOQrdqDFE5KAzDESxxxODLpOeJjh&amp;hl=&amp;" width="500" height="300" frameborder="0"&gt;
+
+                                &lt;/iframe&gt;&lt;br /&gt;&lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;&lt;input name="recaptcha_response_field" value="manual_challenge" type="hidden" /&gt;
+                            </noscript>
+                            <span data-valmsg-replace="true" data-valmsg-for="180f99cb-5d94-401d-b31f-daa0b49411bc" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField textarea textarea">
+                        <label class="fieldLabel" for="be4af811-c6f9-48ef-9cd8-4898c20c00fd">textarea </label>                                <div>
+                            <textarea cols="20" rows="2" id="be4af811-c6f9-48ef-9cd8-4898c20c00fd" name="be4af811-c6f9-48ef-9cd8-4898c20c00fd"></textarea>
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="be4af811-c6f9-48ef-9cd8-4898c20c00fd" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                    <div class="contourField textfield textfield alternating">
+                        <label class="fieldLabel" for="c71e59bf-836d-4271-bb39-809023feb7da">text field </label>                                <div>
+                            <input type="text" maxlength="500" value="" class="text" id="c71e59bf-836d-4271-bb39-809023feb7da" name="c71e59bf-836d-4271-bb39-809023feb7da">
+
+
+
+
+                            <span data-valmsg-replace="true" data-valmsg-for="c71e59bf-836d-4271-bb39-809023feb7da" class="field-validation-valid"></span>
+                        </div>
+                    </div>
+                </fieldset>
+                <div style="display:none">
+                    <input type="text" id="HoneyPot">
+                </div>
+            </div>
+            <div class="contourNavigation">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+      

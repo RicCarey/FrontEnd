@@ -1,0 +1,246 @@
+@import "mixins.scss";
+@import "typeography.scss";
+
+html,
+body
+{
+	background-color: $colour-bg;
+	margin: 0;
+	padding: 0;
+	@include bodyFontSize;
+	height: 100%;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	color: $colour-body;
+}
+
+
+.wrapper
+{
+	max-width: 1280px;
+	margin: 0 auto;
+	background-color: #FFF;
+
+	@include box-shadow(0px, 0px, 1px, 0px, rgba(0, 0, 0, 0.4));
+}
+
+
+iframe
+{
+	max-width: 100%;
+	border: 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+/* Quick links */
+.quick_links
+{
+	overflow: hidden;
+	background-color: $colour-dark;
+	@include em-font-size(12, $bodyfontSize);
+	text-transform: uppercase;
+
+	ul
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: right;
+		overflow: hidden;
+	}
+
+	li
+	{
+		overflow: hidden;
+		display: inline-block;
+	}
+
+	a
+	{
+		color: #a7bbd1;
+		padding: 1em 1.5em;
+		display: block;
+
+		&:hover,
+		&:focus
+		{
+			color: $colour-secondary;
+		}
+	}
+
+	.skip_to_content 
+	{
+		padding: 0;
+	}
+
+	.skip_to_content:focus
+	{
+		clip: auto;
+		height: auto;
+		width: auto;
+		position: absolute;
+		margin: 0;
+		top: 0;
+		left: 0;
+		color: $theme-dark-text;
+		padding: 1em 1.5em;
+	}
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header
+{
+	background-color: #FFF;
+	height: 115px;
+	position: relative;
+	@include clearfix;
+
+	.logo_container
+	{
+		float: left;
+		margin: 1.5em 0 0 60px;
+
+		a
+		{
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer
+{
+	clear: both;
+	margin-bottom: 5em;
+}
+
+.sticky_collapsed
+{
+	margin-bottom: 2em;
+
+	.sticky_footer
+	{
+		border-top: 2px solid #242C33;
+
+		ul
+		{
+			display: none;
+		}
+	}
+
+	.accessibility_toggle
+	{
+		&:before
+		{
+			background-position: -74px -40px;
+		}
+	}
+}
+
+
+/* Text resize */
+.text_size
+{
+	span
+	{
+		padding-right: 10px;
+	}
+
+	a
+	{
+		display: inline-block;
+		background-color: #A7BBD1;
+		color: $colour-dark;
+		font-weight: 600; 
+		padding: 0.5em;
+		@include border-box;
+		margin-left: 5px;
+		text-align: center;
+
+		&:hover,
+		&:focus
+		{
+			background-color: $colour-prime;
+			color: #FFF;
+		}
+	}
+}
+
+.text_down
+{
+	@include em-font-size(14, $bodyfontSize);
+	width: 30px;
+	height: 30px;
+	@include border-radius(15px, 15px, 15px, 15px);
+}
+
+.text_up
+{
+	@include em-font-size(18, $bodyfontSize);
+	width: 40px;
+	height: 40px;
+	@include border-radius(20px, 20px, 20px, 20px);
+}
+
+/* Contrast */
+.contrast
+{
+	span
+	{
+		padding-right: 10px;
+	}
+
+	a
+	{
+		display: inline-block;
+		@include border-box;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		font-weight: 600;
+		@include border-radius(15px, 15px, 15px, 15px);
+		margin: 5px 0 0 5px;
+		text-align: center;
+
+		&:hover,
+		&:focus
+		{
+			text-decoration: underline;
+		}
+	}
+
+	.default
+	{
+		background-color: #FFF;
+		color: $colour-body;
+	}
+
+	.dark
+	{
+		background-color: #000;
+		color: $theme-dark-text;
+	}
+
+	.creme
+	{
+		background-color: $theme-creme-bg;
+		color: $theme-creme-text;
+	}
+}
+
+
+.main_content 
+{
+	margin: 20px 0;
+	clear: both;
+}

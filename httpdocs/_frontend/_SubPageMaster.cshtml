@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "_SiteMaster.cshtml";
+}
+
+<div class="row">
+    <aside class="grid_3">
+        <nav class="subnav">
+            <ul>
+                <li class="selected"><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li>
+                    <a href="#">Link 3</a>
+                    <ul>
+                        <li><a href="#">Sub Link 1</a></li>
+                        <li><a href="#">Sub Link 2</a></li>
+                        <li>
+                            <a href="#">Sub Link 3</a>
+                            <ul>
+                                <li><a href="#">SubSub Link 1</a></li>
+                                <li><a href="#">SubSub Link 2</a></li>
+                                <li><a href="#">SubSub Link 3</a></li>
+                                <li><a href="#">SubSub Link 4</a></li>
+                                <li><a href="#">SubSub Link 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sub Link 4</a></li>
+                        <li><a href="#">Sub Link 5</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="grid_9">
+        @RenderBody()
+    </div>
+</div>

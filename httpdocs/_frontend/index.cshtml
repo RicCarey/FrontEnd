@@ -1,0 +1,851 @@
+﻿@{
+    Page.Title = "Notes";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Templates</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=980">
+
+    <!-- Stylesheets -->
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
+
+        /* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+        /**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+            display: block;
+        }
+
+        audio, canvas, video {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+
+            audio:not([controls]) {
+                display: none;
+                height: 0;
+            }
+
+        [hidden] {
+            display: none;
+        }
+
+        html {
+            background: #fff; /* 1 */
+            color: #000; /* 2 */
+            font-size: 100%; /* 3 */
+            -webkit-text-size-adjust: 100%; /* 4 */
+            -ms-text-size-adjust: 100%; /* 4 */
+        }
+
+        html, button, input, select, textarea {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a:focus {
+            outline: thin dotted;
+        }
+
+        a:active, a:hover {
+            outline: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 0.83em 0;
+        }
+
+        h3 {
+            font-size: 1.17em;
+            margin: 1em 0;
+        }
+
+        h4 {
+            font-size: 1em;
+            margin: 1.33em 0;
+        }
+
+        h5 {
+            font-size: 0.83em;
+            margin: 1.67em 0;
+        }
+
+        h6 {
+            font-size: 0.67em;
+            margin: 2.33em 0;
+        }
+
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+
+        b, strong {
+            font-weight: bold;
+        }
+
+        blockquote {
+            margin: 1em 40px;
+        }
+
+        dfn {
+            font-style: italic;
+        }
+
+        hr {
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            height: 0;
+        }
+
+        mark {
+            background: #ff0;
+            color: #000;
+        }
+
+        p, pre {
+            margin: 1em 0;
+        }
+
+        code, kbd, pre, samp {
+            font-family: monospace, serif;
+            _font-family: 'courier new', monospace;
+            font-size: 1em;
+        }
+
+        pre {
+            white-space: pre;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        q {
+            quotes: none;
+        }
+
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+        small {
+            font-size: 80%;
+        }
+
+        sub, sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        dl, menu, ol, ul {
+            margin: 1em 0;
+        }
+
+        dd {
+            margin: 0 0 0 40px;
+        }
+
+        menu, ol, ul {
+            padding: 0 0 0 40px;
+        }
+
+        nav ul, nav ol {
+            list-style: none;
+            list-style-image: none;
+        }
+
+        img {
+            border: 0; /* 1 */
+            -ms-interpolation-mode: bicubic; /* 2 */
+        }
+
+        svg:not(:root) {
+            overflow: hidden;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        form {
+            margin: 0;
+        }
+
+        fieldset {
+            border: 1px solid #c0c0c0;
+            margin: 0 2px;
+            padding: 0.35em 0.625em 0.75em;
+        }
+
+        legend {
+            border: 0; /* 1 */
+            padding: 0;
+            white-space: normal; /* 2 */
+            :;
+            *margin-left: -7px; /* 3 */
+        }
+
+        button, input, select, textarea {
+            font-size: 100%; /* 1 */
+            margin: 0; /* 2 */
+            vertical-align: baseline; /* 3 */
+            :;
+            *vertical-align: middle; /* 3 */
+        }
+
+        button, input {
+            line-height: normal;
+        }
+
+        button, select {
+            text-transform: none;
+        }
+
+        button, html input[type="button"], /* 1 */
+        input[type="reset"], input[type="submit"] {
+            -webkit-appearance: button; /* 2 */
+            cursor: pointer; /* 3 */
+            :;
+            *overflow: visible; /* 4 */
+        }
+
+            button[disabled], html input[disabled] {
+                cursor: default;
+            }
+
+        input[type="checkbox"], input[type="radio"] {
+            box-sizing: border-box; /* 1 */
+            padding: 0; /* 2 */
+            :;
+            *height: 13px; /* 3 */
+            :;
+            *width: 13px; /* 3 */
+        }
+
+        input[type="search"] {
+            -webkit-appearance: textfield; /* 1 */
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box; /* 2 */
+            box-sizing: content-box;
+        }
+
+            input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+
+        button::-moz-focus-inner, input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        textarea {
+            overflow: auto; /* 1 */
+            vertical-align: top; /* 2 */
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* ==========================================================================
+
+	Site Name
+	------------
+	Website :	Prodo Staging/Template links
+    Author : John Walker - john@prodo.com
+	
+	CONTENTS
+	--------
+	- Normalize reset v1.1.1 (Above)
+	- Site styles
+	
+   ========================================================================== */
+
+        /* General styles
+   ========================================================================== */
+
+
+        body > a {
+            display: block;
+            text-align: center;
+        }
+
+            body > a > img,
+            body > img {
+                margin: 0 auto;
+                display: block;
+                -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, .2);
+                box-shadow: 0px 3px 3px rgba(0, 0, 0, .2);
+            }
+
+        html, body {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            background-color: #F2F2F2;
+        }
+
+        body {
+            font: 16px/1.5 Arial, sans-serif;
+            color: #6d6e71;
+            min-width: 960px;
+        }
+
+        h1 {
+            font-family: 'Avenir LT W01 65 Medium', Helvetica, Helvetica Neue, Arial, sans-serif;
+        }
+
+        h2, h3, h4, h5 {
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: 300;
+        }
+
+        .has_tooltip {
+            position: relative;
+        }
+
+        .tooltip {
+            min-width: 150px;
+            opacity: 0;
+            display: none;
+            padding: 7px 5px;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            z-index: 9999;
+            max-width: 300px;
+            background-color: #EFEFEE;
+            border: 1px solid #E5E5E4;
+            color: #999999;
+            line-height: 1.2;
+            text-indent: 0 !important;
+            white-space: nowrap;
+            text-align: center;
+            font-size: 0.9em;
+            text-transform: lowercase;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+            .tooltip:before {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 10px;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 6px 0 6px 6px;
+                border-color: transparent transparent transparent #efefee;
+            }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+        }
+
+        /* ==========================================================================
+   Header
+   ========================================================================== */
+        header {
+            background-color: #FFF;
+            padding: 40px 0px 20px 0px;
+            position: relative;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        .header_inner {
+            width: 960px;
+            margin: 0 auto;
+            height: 55px;
+        }
+
+        .logo {
+            display: block;
+            float: left;
+            margin-left: 10px;
+        }
+
+            .logo img {
+                width: 179px;
+                height: 48px;
+            }
+
+        header h1 {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            width: 500px;
+            text-align: center;
+            margin: 2px 0 0 -250px;
+            font-weight: normal;
+            font-size: 1.5em;
+        }
+
+        .contact {
+            float: right;
+        }
+
+        nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            background: #FFF;
+            width: 55px;
+            text-align: center;
+            padding: 10px 0;
+            height: 100%;
+            -webkit-box-shadow: -3px 0px 3px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: -3px 0px 3px 0px rgba(0, 0, 0, 0.15);
+        }
+
+            nav ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            nav li {
+                margin: 20px 12px;
+            }
+
+            .contact a,
+            nav a {
+                text-decoration: none;
+                color: #6d6e71;
+            }
+
+        .contact li {
+            float: left;
+            margin-left: 15px;
+        }
+
+            .contact li > a,
+            .contact li > span,
+            nav li > a,
+            nav li > span {
+                display: block;
+                text-indent: -9999px;
+                width: 32px;
+                height: 32px;
+                background: url('../images/_sprite.png') no-repeat top left;
+            }
+
+        .contact .tel > span,
+        nav .tel > span {
+            background-position: 0px 0px;
+        }
+
+            .contact .tel > span:hover,
+            nav .tel > span:hover {
+                background-position: 0px -37px;
+            }
+
+        .contact .email > a,
+        nav .email > a {
+            background-position: -37px 0px;
+        }
+
+            .contact .email > a:hover,
+            nav .email > a:hover {
+                background-position: -37px -37px;
+            }
+
+        nav .home > a {
+            background-position: -74px 0px;
+        }
+
+            nav .home > a:hover {
+                background-position: -74px -37px;
+            }
+
+
+        /* ==========================================================================
+   Main Content
+   ========================================================================== */
+        .main {
+            margin: 0 auto;
+            width: 960px;
+        }
+
+
+        /* Templates list
+   ========================================================================== */
+        .template_device_list {
+            list-style: none;
+            margin: 80px 0;
+            padding: 0;
+            text-align: center;
+        }
+
+            .template_device_list > li {
+                width: 300px;
+                display: inline-block;
+                margin: 0 8px;
+                vertical-align: top;
+            }
+
+            .template_device_list h3 {
+                text-align: center;
+                padding-top: 75px;
+                background: url('../images/icons/desktop.png') no-repeat top center;
+                font-size: 1.1em;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .template_device_list .tablet h3 {
+                background-image: url('../images/icons/tablet.png');
+            }
+
+            .template_device_list .mobile h3 {
+                background-image: url('../images/icons/mobile.png');
+            }
+
+            .template_device_list .new_count {
+                background-color: #D85D3D;
+                color: #FFF;
+                font-size: 0.75em;
+                display: inline-block;
+                width: 14px;
+                text-align: center;
+                line-height: 1.2;
+                margin-left: 10px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+            }
+
+        .templates_list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: left;
+            font-size: 0.9em;
+            -webkit-box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.15);
+        }
+
+            .templates_list .template_item {
+                background-color: #FFF;
+                border-top: 2px solid #E4E4E4;
+                padding: 25px 15px 25px 20px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .templates_list .new .template_item:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 5px;
+                background: #A9CB67;
+                height: 100%;
+            }
+
+            .templates_list .new .template_item .template {
+                padding-left: 0px;
+            }
+
+            .templates_list .template {
+                float: left;
+            }
+
+            .templates_list a {
+                color: #6d6e71;
+                text-decoration: none;
+            }
+
+                .templates_list a:hover {
+                    color: #000;
+                }
+
+            .templates_list .info,
+            .templates_list .revisions {
+                display: block;
+                float: right;
+                margin-left: 15px;
+                text-indent: -9999px;
+                background: url('../images/_sprite.png') no-repeat top left;
+                outline: 0;
+            }
+
+            .templates_list .info {
+                width: 7px;
+                height: 16px;
+                background-position: -181px 0px;
+            }
+
+            .templates_list .revisions {
+                width: 17px;
+                height: 17px;
+                background-position: -200px 0px;
+            }
+
+        .revisisions_list {
+            list-style: none;
+            margin: 0 0 0 10px;
+            padding: 0;
+            width: 300px;
+        }
+
+            .revisisions_list a {
+                color: #979797;
+            }
+
+            .revisisions_list > li {
+                background: #FFF;
+                padding: 20px 15px;
+                border-top: 2px solid #E4E4E4;
+                position: relative;
+            }
+
+                .revisisions_list > li:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 5px;
+                    background: #9B9B9B;
+                    height: 100%;
+                }
+
+        .info_copy {
+            background-color: #979797;
+            color: #FFF;
+            padding: 10px 20px;
+        }
+
+        /* Internal - Screen Page
+   ========================================================================== */
+        .screenshot {
+            margin-left: -55px;
+        }
+
+
+        /* Desktop Screenshot
+   ========================================================================== */
+        .desktop_screen {
+            text-align: center;
+        }
+
+        /* Tablet Screenshot
+   ========================================================================== */
+        .desktop_screen {
+            text-align: center;
+        }
+
+        /* Mobile Screenshot
+   ========================================================================== */
+        .mobile_screen {
+            text-align: center;
+            background: url(../images/mobile.jpg) no-repeat center top;
+            width: 419px;
+            height: 777px;
+            margin: 60px auto;
+        }
+
+            .mobile_screen .viewport { /* this all needs finishing */
+                width:;
+                height:;
+                margin:;
+                overflow: scroll;
+            }
+
+
+        /* Notes section
+   ========================================================================== */
+
+        .notes {
+            border-top: 1px solid #BBBBBB;
+            position: relative;
+            padding: 40px 150px;
+        }
+
+            .notes:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                background: #FFF;
+            }
+
+            .notes > ul {
+                list-style: none;
+                margin: 0 auto;
+                padding: 0;
+                color: #999999;
+            }
+
+                .notes > ul li {
+                    padding-left: 15px;
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px 0;
+                    border-left: 5px solid #9B9B9B;
+                }
+
+                    .notes > ul li p {
+                        margin: 0.5em 0;
+                    }
+
+        /* ==========================================================================
+   IE Fixes
+   ========================================================================== */
+
+        .lt-ie8 .template_device_list > li,
+        .lt-ie8 .template_device_list .new_count {
+            zoom: 1;
+            *display: inline;
+        }
+
+        .lt-ie8 a * {
+            cursor: pointer;
+        }
+
+        .lt-ie8 .templates_list .new .template_item .template {
+            color: #A9CB67;
+        }
+
+
+        /* ==========================================================================
+   
+   
+
+    </style>
+
+    <!-- Scripts to load quick -->
+    <script type="text/javascript" src="http://fast.fonts.com/jsapi/e6be5135-1df3-4bb4-813d-e9d1209e9a69.js"></script>
+
+    <!-- Note: Before go live ensure to use a custom modernizr build! -->
+    <script src="/output/js/scripts/libs/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    <header>
+
+        <div class="header_inner">
+
+            <a href="http://www.prodo.com/" class="logo" title="Prodo Digital" target="_blank">
+                <img src="http://www.prodo.com/images/logo.svg" alt="Prodo" onerror="this.onerror=null; this.src='images/logo.png'" />
+            </a>
+
+            <h1>Templates</h1>
+
+        </div>
+        <!-- .header_inner -->
+
+    </header>
+    <!-- header -->
+
+    <div class="main clearfix" role="main">
+
+        <ul class="template_device_list">
+            <li class="desktop">
+                <h3>Desktop templates</h3>
+                <ul class="templates_list">
+
+                   
+                @{
+                    if (!string.IsNullOrEmpty(Request["export"]))
+                    {
+                        WebsiteExtractor.ExtractSite();
+                    }
+
+                    var pages = WebsiteExtractor.GetPages();
+
+
+                  
+                        foreach (var page in pages)
+                        {
+                           
+                             <li class="new">
+                                <div class="template_item">
+                                    <a href="@page.Value" class="template">@page.Key</a>
+                                </div>
+                            </li>
+                        }
+
+                 
+
+
+                   
+                }
+
+                </ul>
+                <!-- .templates_list -->
+            </li>
+            <!-- .desktop -->
+
+        </ul>
+
+        <a href="?export=true" class="btn">Export Site</a>
+        <!-- .template_device_list -->
+
+        <section class="notes">
+            <h2>Additional notes:</h2>
+            <ul></ul>
+        </section>
+        <!-- .notes -->
+
+    </div>
+
+</body>
+</html>
+
+

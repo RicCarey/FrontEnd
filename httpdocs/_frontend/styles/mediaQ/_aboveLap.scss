@@ -1,0 +1,197 @@
+@import "../mixins.scss";
+
+@media only screen and (min-width: 980px) 
+{
+	/* Calendar view */
+	.calendar_toggle
+	{
+		@include border-radius(2px, 2px, 2px, 2px);
+		display: block;
+		position: absolute;
+		right: 1em;
+		top: 10px;
+		border: 1px solid $colour-vpale-blue;
+
+		a
+		{
+			width: 15px;
+			height: 15px;
+			display: block;
+			text-indent:-9999px;
+			background: $colour-vpale-blue url('/images/background/_sprite.png') no-repeat -295px -113px;
+			padding: 5px;
+			float: left;
+
+			&:hover,
+			&:focus
+			{
+				background-color: $colour-lpale-blue;
+			}
+		}
+
+		.active,
+		.active:hover,
+		.active:focus
+		{
+			background-color: $colour-grey;
+
+			&.calendar_view
+			{
+				background-position: -295px -89px;
+			}
+		}
+
+		.list_view
+		{
+			background-position: -319px -90px;
+
+			&.active
+			{
+				background-position: -319px -113px;
+			}
+		}
+
+	}
+
+	.cal_view
+	{
+		position: relative;
+		width: 920px;
+		margin: 0 auto;
+
+		.days
+		{
+			display: block;
+		}
+
+		.days,
+		.dates
+		{
+			@include clearfix;
+
+			> li
+			{
+				@include border-box;
+				width: 130px;
+				float: left;
+			}
+		}
+
+		.dates
+		{
+			.even_w_event
+			{
+				background-color: $colour-bg;
+			}
+
+			> li
+			{
+				height: 150px;
+				border-right: 1px solid #FFF;
+				padding: 0.5em;
+
+				&:nth-child(7n)
+				{
+					border-right: 0;
+				}
+			}
+
+			.day_tue,
+			.day_thur,
+			.day_sat
+			{
+				background-color: $colour-vpale-blue;
+			}
+		}
+
+		.no_events,
+		.empty
+		{
+			display: block;
+		}
+
+		.events_day
+		{
+			margin: 0;	
+			float: none;
+		}
+
+		.day
+		{
+			text-align: left;
+			display: block;
+			margin-bottom: 10px;
+			width: auto;
+			float: none;
+		}
+
+		.venue
+		{
+			display: none;
+		}
+
+		.show_events
+		{
+			display: block;
+			font-weight: 600;
+			padding-right: 30px;
+			position: relative;
+				
+			&:after
+			{
+				content: '';
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 2px;
+				width: 16px;
+				height: 13px;
+				background: url("/images/background/_sprite.png") no-repeat -270px 0px;
+			}
+		}
+
+		.events_pull
+		{
+			position: absolute;
+			left: 130px;
+			width: 390px;
+			min-height: 150px;
+			padding: 10px;
+			background-color: #FFF;
+			z-index: 10;
+			color: white;
+			display: none;
+			bottom: 0px;
+			@include border-box;
+
+			.venue
+			{
+				display: inline-block;
+			}
+
+			.close
+			{
+				position: absolute;
+				top: 10px; 
+				right: 10px;
+				display:block;
+				width: 15px;
+				height: 15px;
+				text-indent:-9999px;
+				background:url('/images/background/_sprite.png') no-repeat -335px -72px;
+			}
+
+			ul
+			{
+				padding-top: 15px;
+			}
+
+			&.right
+			{
+				left: auto;
+				right: 130px;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,611 @@
+@import "../mixins.scss";
+
+/***** inbetween desktop and lap *****/
+@media only screen and (min-width: 979px) and (max-width: 1199px) 
+{
+	/* ==========================================================================
+	   Header
+	   ========================================================================== */
+	header .logo_container
+	{
+		margin: 1.5em 1em 0 10px;
+		max-width: 200px;
+		
+		img
+		{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.primary .menu_section a
+	{
+		padding: 3.5em 10px;
+	}
+
+	.site_search .submit
+	{
+		width: 70px;
+	}
+
+	/* ==========================================================================
+	   Rotators
+	*/
+	.banner_rotator,
+	.content_rotator
+	{
+		.msg
+		{
+			top: 10%;
+			width: 70%;
+		}
+
+		.align-centre
+		{
+			.msg
+			{
+				margin-left: -35%;
+				left: 50%;
+			}
+		}
+	}
+}
+
+/***** Lap (Smaller than 979px) including mobile  *****/
+@media only screen and (max-width: 979px) 
+{
+    .wrapper
+    {
+        max-width: 94%;
+        min-width: 768px;
+    }
+
+	h1
+	{
+		@include em-font-size(40, $bodyfontSize);
+	}
+
+	h2
+	{
+		@include em-font-size(24, $bodyfontSize);
+	}
+
+	.responsive_img
+	{
+		width: 100%;
+		height: auto;
+	}
+
+	/* ==========================================================================
+	   Header
+	   ========================================================================== */
+	header .logo_container
+	{
+		margin: 1.5em 1em 0 1em;
+	}
+
+	.site_search input[type="search"]
+	{
+		width: 15em;
+	}
+
+	/* ==========================================================================
+	   Primary Nav
+	*/
+
+	.primary
+	{
+		.menu_toggle
+		{
+			display: block;
+		}
+
+		> ul
+		{
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			z-index: 200;
+			background-color: rgba(70, 79, 88, 0.8);
+
+			> li
+			{
+				width: 50%;
+				border-bottom: 1px solid $colour-light-grey;
+				background-color: $colour-vpale-blue;
+				@include border-box;
+			
+				&:nth-child(odd)
+				{
+					clear: both;
+					border-right: 1px solid $colour-light-grey;
+				}
+			}
+		}
+
+		.selected
+		{
+			.menu_section
+			{
+				border-bottom: 1px solid $colour-vpale-blue;
+
+				a{
+					background-color: $colour-light-grey;
+				}
+			}
+
+			.sub_toggle
+			{
+				background-color: $colour-grey;
+
+				&:after
+				{
+					background-position: -190px -13px;
+				}
+			}
+		}
+
+		.menu_section
+		{
+			position: relative;
+			border-bottom: 1px solid transparent;
+
+			a
+			{
+				height: auto;
+				padding: 1.5em 2em;
+
+				&:hover,
+				&:active
+				{
+					background-color: $colour-prime;
+					color: #FFF;
+				}
+			}
+		}
+
+		.has_sub
+		{
+			a
+			{
+				width: 85%;
+			}
+		}
+
+		.mega_menu
+		{
+			position: static;
+
+			> ul > li,
+			.cta_area,
+			.section_link
+			{
+				display: none;
+			}
+
+			li
+			{
+				width: auto;
+				float: none;
+			}
+
+			li.nav_section
+			{
+				display: block;
+			}
+
+			a
+			{
+				padding: 0.5em 0.5em 0.5em 1em;
+				position: relative;
+
+				&:before
+				{
+					content: '';
+					display: block;
+					background: url("/images/background/_sprite.png") no-repeat -192px 0px;
+					width: 10px;
+					height: 10px;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					margin-top: -5px;
+				}
+			}
+
+			ul ul li
+			{
+				margin: 0;
+			}
+		}
+
+		.sub_toggle
+		{
+			display: block;
+			width: 15%;
+			background-color: $color-greyblue-dark;
+			border-left-color: $colour-light-grey;
+
+			&:hover,
+			&:focus
+			{
+				background-color: $colour-lpale-blue;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Sub navigation
+	*/
+	.sub_nav
+	{
+		top: 25px;
+	}
+
+    #subnav_secondary
+    {
+        right: auto;
+        left: 0;
+        top: 25px;
+    }
+
+   .hasdoublesub
+    {
+        position: relative;
+        min-height: 150px;
+    }
+
+
+	/* ==========================================================================
+	   Banner Rotator
+	*/
+	.banner_rotator
+	{
+		min-height: 200px;
+		p
+		{
+			@include em-font-size(36, $bodyfontSize);
+			line-height: 1.4;
+		}
+
+		.msg
+		{
+			top: 10%;
+			width: 90%;
+		}
+
+		.align-centre
+		{
+			.msg
+			{
+				margin-left: -45%;
+				left: 50%;
+			}
+		}
+
+		.slides img
+		{
+			height: auto;
+		}
+	}
+
+
+	.content_rotator 
+	{
+		float: none;
+		width: auto;
+		margin: 0 auto 40px auto;
+
+		h2
+		{
+			@include em-font-size(40, $bodyfontSize);
+		}
+	}
+
+	/* ==========================================================================
+	   Footer
+	   ========================================================================== */
+	/* Sticky footer */
+	.sticky_footer
+	{
+		@include em-font-size(14, $bodyfontSize);
+
+		li
+		{
+			padding: 15px 5px 15px 5px;
+			width: 12%;
+            min-height: 72px;
+		}
+
+		.lrg_item
+		{
+			width: 24%;
+		}
+
+		.contrast a
+		{
+			margin: 5px 0 0 2px;
+		}
+
+		.text_size span,
+		.contrast span
+		{
+			width: 65px;
+		}
+
+
+        .live_chat
+        {
+            padding-bottom: 0;
+            min-height: 0x;
+        }
+	}
+
+    .footer_top
+    {   
+        padding: 30px 0;
+    }
+
+    .footer_links
+    {
+        text-align: center;
+
+	    li
+	    {
+		    float: none;
+            display: inline-block;
+            margin: 0px 20px 30px 20px;
+	    }
+    }
+
+    footer
+    {
+        .social_links
+        {
+            float: none;
+            text-align: center;
+            margin: 0;
+
+            li
+            {
+		        float: none;
+                display: inline-block;
+            }
+        }
+    }
+
+    .reg_copy
+    {
+	    ul
+	    {
+            float: none;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .copy_notice {
+            float: none;
+            text-align: center;
+            display: block;
+        }
+    }
+
+	/* ==========================================================================
+	   Page Elements 
+	   ========================================================================== */
+
+	.breadcrumb
+	{
+		margin-top: 1em;
+	}
+
+	/* ==========================================================================
+	   Tool box
+	*/
+	.tool_box
+	{
+		ul
+		{
+			@include em-font-size(11, 13);
+		}
+	}
+
+	/* ==========================================================================
+	   Icon list
+	*/
+	.icon_link_list
+	{
+		@include em-font-size(11, $bodyfontSize);
+	}
+
+	/* ==========================================================================
+	   Image bg modules
+	*/
+	.imgbg_module
+	{
+		min-height: 190px;
+
+		.overlay_title
+		{
+			display: none;	
+		}
+
+		.no_overlay_title
+		{
+			@include vertical-align(absolute);
+			display: block;	
+		}
+
+		.title_link
+		{
+			top: 0;
+			@include transparent-background($colour-prime, 0.7);
+		}
+
+		&:hover
+		{
+			.title_link
+			{
+				display: block;
+			}
+		}
+
+		.overlay_content
+		{
+			display: none;
+		}
+	}
+
+	/* ==========================================================================
+	   Latest Articles
+	*/
+	.home
+	{
+		.latest_articles
+		{
+			text-align: center;
+
+			> div
+			{
+				float: none;
+				display: inline-block;
+				width: 36%;
+				margin: 0 3%;
+				vertical-align: top;
+				text-align: left;
+			}
+		}
+	}
+
+	/* Home Area map */
+	.home
+	{
+		.area_logo_list
+		{
+			left: 5%;
+		}
+	}
+
+	/* ==========================================================================
+	   Chatter
+	*/
+	.chatter_list
+	{
+		li
+		{
+			padding: 1em;
+		}
+	}
+
+	/* ==========================================================================
+	   Tabbed content
+	*/
+	.content_tabs
+	{
+		margin: 10px 0;
+	}
+
+
+	/* ==========================================================================
+	   Event calendar
+	*/
+	.events_pull
+	{
+		display: block !important;
+	}
+
+	/* ==========================================================================
+	   Areas
+	*/
+	.area_logo_list
+	{
+		top: 1em;
+	}
+
+	/* Icon Details List */
+	.icon_details_list
+	{
+		li
+		{
+			width: 32%;
+		}
+	}
+
+	/* ==========================================================================
+	   Module boxes
+	*/
+	.module_box
+	{
+		h2
+		{
+			@include em-font-size(40, $bodyfontSize);
+		}
+
+		.more_link
+		{
+			margin-bottom: 0;
+		}
+	}
+
+	/* ==========================================================================
+	   Row accordions (Staff/Documents) */
+	.accordion_row
+	{
+		.btn
+		{
+			width: auto;
+		}
+	}
+
+	/* ==========================================================================
+	   Staff grid */
+	.staff_grid
+	{
+		> li
+		{
+			width: 32%;
+		}
+	}
+
+	/* ==========================================================================
+	   Listing
+	*/
+	.listing
+	{
+		.actions
+		{
+			.btn
+			{
+				margin: 0;
+				display: inline-block;
+				min-width: 150px;
+			}
+		}
+	}
+
+	/* Alert */
+	.alert
+	{
+		.title
+		{
+			@include em-font-size(40, $bodyfontSize);
+		}
+
+		.alert_content
+		{
+			padding: 1em;
+            margin-right: 100px;
+		}
+	}
+
+}
+
+/***** inbetween lap and mobile *****/
+@media only screen and (min-width: 768px) and (max-width: 798px) 
+{
+
+
+
+}
