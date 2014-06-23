@@ -1,0 +1,51 @@
+[Tt]humbs.db
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.sln.docstates
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+httpdocs/App_Data/Logs/
+httpdocs/App_Data/packages/
+httpdocs/App_Data/preview/
+httpdocs/App_Data/TEMP/
+httpdocs/App_Data/umbraco.config
+httpdocs/App_Data/umbraco.licensing.log.txt
+httpdocs/sitemap.xml
+httpdocs/sitemap_index.xml
+httpdocs/sitemap_web.xml
+archive/*
+# ImageGen
+*/Cached/*
+*.mswwsettings
+/* Grunt */
+node_modules
+.npm-debug.log
+tmp
+/* Templates */
+*.rar
+/* Sass */
+.sass-cache
+httpdocs/_frontend/Site/Export/
+Prodo/*/[Bb]in
+httpdocs/[Mm]edia/*/cached
+httpdocs/[Mm]edia/imagecache/
